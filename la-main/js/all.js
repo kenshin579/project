@@ -23,9 +23,6 @@
 
   btnEvent('.view_btn', 'click', '.view_story_list');
   btnEvent('.magazine_num_btn', 'click', '.magazine_num_list');
-  // btnEvent('.navi_btn > button', 'click', '.gnb_wrap','menu', 'close');
-
-
 
   function naviBtnEvent(btn, evt, off_text, on_text) {
     var 
@@ -54,7 +51,6 @@ naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
 
     $('.more_btn').on('click', function(){ 
       $('.m-stories-content2').addClass('more');
-      // $('.more_btn').css('display','none');
       $('.more_btn').addClass('click');
     });
   }
@@ -159,29 +155,6 @@ naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
 })(this, this.jQuery);
 
 
-// map
-// (function(global, $){
-//   'use strict';
-
-//   function initialize() {
-//     var mapProp = {
-//       center:new google.maps.LatLng(37.517553, 127.018153),
-//       zoom:17,
-//       scrollwheel: false,
-//       mapTypeId:google.maps.MapTypeId.ROADMAP
-//     };
-//     var map=new google.maps.Map(document.getElementById("map_box"),mapProp);
-
-//     var marker = new google.maps.Marker({
-//       map: map,
-//       position: {lat: 37.517553, lng: 127.018153}
-//     });
-//   }
-//   google.maps.event.addDomListener(window, 'load', initialize);
-
-// })(this, this.jQuery);
-
-
 
 
 
@@ -265,9 +238,8 @@ naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
     .addTo( ctrl )
     .on("enter", function (event) {
       // console.log("Scene entered.");
-      $('.chicken_wrap .chicken_head')
-        .add('.chicken_wrap .chicken_sub_head')
-        .shuffleLetters();
+      $('.chicken_wrap .chicken_head').shuffleLetters();
+      $('.chicken_wrap .chicken_sub_head').shuffleLetters();
     });
 
   var stories_wrap_scene = new SM.Scene({

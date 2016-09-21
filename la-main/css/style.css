@@ -443,12 +443,10 @@ p {
 }
 
 .chicken_wrap figure img {
-  filter: blur(2px);
   transition: all .3s;
 }
 
 .chicken_wrap figure img:hover,.chicken_wrap figure img:focus {
-  filter: none;
   -ms-transform: scale(1.2);
       transform: scale(1.2);
 }
@@ -1621,6 +1619,14 @@ p {
   .chicken_wrap h4 {
     padding-top: 29px;
     padding-bottom: 29px;
+  }
+
+  .chicken_wrap figure img {
+    filter: blur(2px);
+  }
+
+  .chicken_wrap figure img:hover,.chicken_wrap figure img:focus {
+    filter: none;
   }
 
   .chicken_list {

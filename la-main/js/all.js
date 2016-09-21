@@ -1,6 +1,6 @@
 //base.js
 
-// button
+// button event
 (function(global, $){
   'use strict';
 
@@ -45,8 +45,6 @@
 
 naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
 
-
-
   function moreBtn() {
 
     $('.more_btn').on('click', function(){ 
@@ -66,8 +64,7 @@ naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
 
   // 음원 로드
   var bgm = new Audio();
-
-  bgm.setAttribute('src', './media/spring-rain.mp3');
+  bgm.setAttribute('src', './media/bgm.m4a');
 
   //로드되면 배경음악 실행
   bgm.oncanplay = function() {
@@ -80,7 +77,7 @@ naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
       bgm.pause();
     }
   });
-
+  // BGM play stop 버튼 
   $('.play_btn').on('click', function () {
     bgm.play();
   });

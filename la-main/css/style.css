@@ -69,8 +69,9 @@ a {
   width: 100%;
   height: 700vh;
   content: "";
-  -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }/**
  * --------------------------------
  * Grid Module
@@ -135,14 +136,16 @@ a {
 .slide_img_btn,.chicken_wrap {
   opacity: 0;
   transition: all 1s;
-  -ms-transform: translateY(50%);
-      transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
 }
 
 .fade-in-transform {
   opacity: 1;
-  -ms-transform: translateY(0);
-      transform: translateY(0);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }/**
  * ----------------------------------
  * reset
@@ -203,8 +206,9 @@ p {
   letter-spacing: 1.5px;
   font-weight: 300;
   font-size: 12px;
-  -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .skip_wrap button,.view_btn,.magazine_num_btn {
@@ -366,8 +370,9 @@ p {
   letter-spacing: 1.5px;
   font-weight: 300;
   font-size: 1.5rem;
-  -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .title_txt {
@@ -398,12 +403,14 @@ p {
 }
 
 .slide_img_btn a {
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
   transition: all .45s ease-out;
 }
 
 .slide_img_btn a.btn_on {
-  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
 }
 
 .slide_img_btn a.btn_on::before,.slide_img_btn a:hover::before,.slide_img_btn a:focus::before {
@@ -447,8 +454,9 @@ p {
 }
 
 .chicken_wrap figure img:hover,.chicken_wrap figure img:focus {
-  -ms-transform: scale(1.2);
-      transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .chicken_wrap figcaption {
@@ -694,10 +702,6 @@ p {
   border-bottom: 1px dotted #8c919b;
 }
 
-.footer_wrap .contact_info .boder_right {
-  border-bottom: 1px dotted #8c919b;
-}
-
 .footer_wrap .contact_info .facebook_lamain h4 {
   padding-bottom: 4px;
 }
@@ -707,8 +711,9 @@ p {
 }
 
 .footer_wrap .contact_info .facebook_lamain i:hover,.footer_wrap .contact_info .facebook_lamain i:focus {
-  -ms-transform: scale(1.1);
-      transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .footer_wrap .copyright {
@@ -1144,11 +1149,6 @@ p {
     border-bottom: none;
     border-left: 1px dotted #8c919b;
   }
-
-  .footer_wrap .contact_info .boder_right {
-    border-right: 1px dotted #8c919b;
-    border-bottom: none;
-  }
 }
 
 @media (min-width: 700px) and (max-width: 1179px) {
@@ -1176,8 +1176,9 @@ p {
   .m-content-center {
     position: relative;
     left: 50%;
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 
@@ -1508,8 +1509,9 @@ p {
     z-index: 9999;
     color: #fff;
     text-shadow: 1px 1px 2px #000;
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 
   .gnb_navi li {
@@ -1622,11 +1624,13 @@ p {
   }
 
   .chicken_wrap figure img {
-    filter: blur(2px);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
   }
 
   .chicken_wrap figure img:hover,.chicken_wrap figure img:focus {
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
   }
 
   .chicken_list {
@@ -1649,8 +1653,9 @@ p {
   .l-content-center {
     position: relative;
     left: 50%;
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 
   .l-top-padding {
@@ -1698,8 +1703,9 @@ p {
   .skip_wrap .bgm_btn {
     top: 80px;
     left: 50%;
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 
   .gnb_navi {

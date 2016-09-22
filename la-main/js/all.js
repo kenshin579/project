@@ -11,7 +11,6 @@
 
     $btn.on( evt, function () {
       if($btn.hasClass('close_btn')){
-        // $content.css('display', 'none');
         $content.attr('style', '');
         $btn.text(off_text).removeClass('close_btn');
       }else{
@@ -150,41 +149,6 @@ naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
     }
   });
 })(this, this.jQuery);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

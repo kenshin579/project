@@ -13,62 +13,41 @@
       //보여질 콘텐츠
       var $show_con = $(show_con);
       // 슬라이드 투글
-      $show_con.slideToggle(400);
+      $show_con.slideToggle(400, function(){
+        if($this_btn.hasClass('close_btn')){
+          $show_con.attr('style', '');
+          $this_btn.text('menu').removeClass('close_btn');
+        }else{
+          $show_con.show();
+          $this_btn.text('close').addClass('close_btn');
+        }
+      });
       
       // 만약 추가기능이 있다면 추가기능 함수 실행 : 없으면 실행 안됨
-      // if( addFn ){ addFn($this_btn, $show_con); }
+      if( addFn ){ addFn($this_btn); }
     });
   }
 
   btnEvent( '.view_btn', "click", ".view_story_list" );
   btnEvent( '.magazine_num_btn', "click", ".magazine_num_list" );
-  // 문제?  모바일버전일때 메뉴버튼 누르고 나면 메뉴들이 태블릿 데스크탑으로 갔을때 사라짐,,, ㅜㅜㅜㅜ
-  // btnEvent( '.navi_btn > button', "click", ".gnb_wrap", addFunction );
-
-  // function addFunction($this_btn, $show_con) {
-  //   $show_con.slideToggle(400, function(){
-  //     if($this_btn.hasClass('close_btn')){
-  //       $('.bgm_btn').attr('style', '');
-  //       $show_con.attr('style', '');
-  //       $this_btn.text('menu').removeClass('close_btn');
-  //     }else{
-  //       $('.bgm_btn').show();
-  //       $show_con.show();
-  //       $this_btn.text('close').addClass('close_btn');
-  //     }
-  //   });
-  // }
-
-
   // 모바일버전 메뉴버튼 : GNB show, hide / BGM버튼 show, hide / menu, close
-  function smallMenu(btn, event_type, show_con, show_con2){
-     // 버튼선택
-    var $this_btn = $(btn);
-    // 버튼 이벤트가 실행될때 함수실행
-    $this_btn.on(event_type, function( event ){
-      //보여질 콘텐츠
-      var $show_con = $(show_con),
-          $show_con2 = $(show_con2);
-      // 슬라이드 투글
-      $show_con.slideToggle(400, function(){
+  btnEvent( '.navi_btn > button', "click", ".gnb_wrap", addFunction );
+
+  function addFunction($this_btn) {
+    var $show_con2 = $('.bgm_btn');
+    $show_con2.slideToggle(400, function(){
         if($this_btn.hasClass('close_btn')){
-          $show_con2.attr('style', '');
-          $show_con.attr('style', '');
-          $this_btn.text('menu').removeClass('close_btn');
-        }else{
           $show_con2.show();
-          $show_con.show();
-          $this_btn.text('close').addClass('close_btn');
+        }else{
+          $show_con2.attr('style', '');
         }
-      });
     });
   }
-  smallMenu('.navi_btn > button', "click", ".gnb_wrap", ".bgm_btn");
 
   //모바일 버전 : 더보기 버튼
   function moreBtn() {
     $('.more_btn').on('click', function(){ 
-      $('.m-stories-content2').addClass('more');
+      $('.m-stories-content2').fadeIn(600).addClass('more');
       $('.more_btn').addClass('click');
     });
   }

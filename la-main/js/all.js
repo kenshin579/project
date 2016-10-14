@@ -4,72 +4,56 @@
 (function(global, $){
   'use strict';
 
-  function btnEvent(btn, evt, content, off_text, on_text) {
-    var 
-      $btn = $(btn),
-      $content = $(content);
-
-    $btn.on( evt, function () {
-      if($btn.hasClass('close_btn')){
-        $content.attr('style', '');
-        $btn.text(off_text).removeClass('close_btn');
-      }else{
-        $content.slideDown().css('display', 'block');
-        $btn.text(on_text).addClass('close_btn');
-      }
+  // 매개변수 (버튼선택, 이벤트종류, 보일콘텐츠, 추가기능)
+  function btnEvent( btn, event_type, show_menu, addFn ){
+    // 버튼선택
+    var $this = $(btn);
+    // 버튼 이벤트가 실행될때 함수실행
+    $this.on(event_type, function( event ){
+      //보여질 콘텐츠
+      var _$this = $(show_menu);
+      // 슬라이드 투글
+      _$this.slideToggle(400);
+      // 만약 추가기능이 있다면 추가기능 함수 실행 : 없으면 실행 안됨
+      if( addFn ){ addFn(); }
     });
   }
 
-  btnEvent('.view_btn', 'click', '.view_story_list');
-  btnEvent('.magazine_num_btn', 'click', '.magazine_num_list');
+  btnEvent( '.view_btn', "click", ".view_story_list" );
+  btnEvent( '.magazine_num_btn', "click", ".magazine_num_list" );
+  btnEvent( '.navi_btn > button', "click", ".gnb_wrap", addFunction );
 
-  function naviBtnEvent(btn, evt, off_text, on_text) {
-    var 
-      $btn = $(btn),
-      $content = $('.gnb_wrap'),
-      $content2 = $('.bgm_btn');
-
-    $btn.on( evt, function () {
-      if($btn.hasClass('close_btn')){
-        $content.attr('style', '');
-        $content2.attr('style', '');
-        $btn.text(off_text).removeClass('close_btn');
-      }else{
-        $content.fadeIn(500).css('display', 'block');
-        $content2.fadeIn(500).css('display', 'block');
-        $btn.text(on_text).addClass('close_btn');
-      }
-    });
+  function addFunction(){
+    $('.bgm_btn').slideToggle(400);
   }
 
-naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
-
+  //모바일 버전 : 더보기 버튼
   function moreBtn() {
-
     $('.more_btn').on('click', function(){ 
       $('.m-stories-content2').addClass('more');
       $('.more_btn').addClass('click');
     });
   }
-
   moreBtn();
+
+  //탑버튼 부드러운 스크롤
+  $('.back_top').on('click',function(){
+    $('html, body').animate({'scrollTop': '0px' }, 500 );
+  });
 
 })(this, this.jQuery);
 
 
-// BGM
+// BGM 컨트롤
 (function(global, $) {
   'use strict';
-
   // 음원 로드
   var bgm = new Audio();
   bgm.setAttribute('src', './media/bgm.m4a');
-
   //로드되면 배경음악 실행
   bgm.oncanplay = function() {
     bgm.play();
   };
-
   // ecs키 누르면 배경음악 정지
   $(document).on('keydown', function(e) {
     if(e.keyCode === 27) {
@@ -100,7 +84,6 @@ naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
 
 })(this, this.jQuery);
 
-
 //img slide
 (function(global, $){
   'use strict';
@@ -130,24 +113,28 @@ naviBtnEvent('.navi_btn > button', 'click', 'menu', 'close');
 
 }(this, this.jQuery));
 
-// scroll
+
+// scroll 발생시 생기는 동작들
 (function(global, $){
   'use strict';
-  $(window).scroll(function(){ 
 
+  $(window).scroll(function(){
+    //스크롤이 발생하면 탑버튼 생성
     $('.back_top').css('display', 'block');
     // console.log($(window).scrollTop());
+    //만약 스크롤이 맨위에 있다면 == 0과 같다면
     if( $(window).scrollTop() === 0 ){
       // console.log('scroll top');
-
-      // 탑버튼
+      // 탑버튼은 숨기고
       $('.back_top').css('display', 'none');
-
       // 스토리지 더보기 버튼 
       $('.m-stories-content2').removeClass('more');
       $('.more_btn').removeClass('click');
     }
+    
   });
+
+
 })(this, this.jQuery);
 
 

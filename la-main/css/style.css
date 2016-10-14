@@ -146,11 +146,7 @@ a {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
-}/**
- * ----------------------------------
- * reset
- * ----------------------------------
- */body {
+}/* reset */body {
   font-family: "Lato", sans-serif;
 }
 
@@ -231,7 +227,7 @@ p {
  * ----------------------------------
  *//**
  * ------------------------------------
- *  skip : 본문바로가기 , 맨위로 버튼 , 배경음악 재생 정지 버
+ *  skip : 본문바로가기 , 맨위로 버튼 , 배경음악 재생 정지 버튼
  * -----------------------------------
  */.skip_wrap {
   position: relative;
@@ -454,6 +450,8 @@ p {
 }
 
 .chicken_wrap figure img:hover,.chicken_wrap figure img:focus {
+  -webkit-filter: none;
+          filter: none;
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -1012,11 +1010,6 @@ p {
   .chicken_wrap figure img {
     -webkit-filter: blur(2px);
             filter: blur(2px);
-  }
-
-  .chicken_wrap figure img:hover,.chicken_wrap figure img:focus {
-    -webkit-filter: none;
-            filter: none;
   }
 
   .chicken_txt {
@@ -1713,9 +1706,13 @@ p {
     border-bottom: 4px double #000;
   }
 
+  .gnb_navi li {
+    padding-bottom: 7px;
+  }
+
   .gnb_navi a {
     display: block;
-    padding: 15px 0;
+    padding: 12px 0;
   }
 }
 

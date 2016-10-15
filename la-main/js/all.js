@@ -16,10 +16,10 @@
       $show_con.slideToggle(400, function(){
         if($this_btn.hasClass('close_btn')){
           $show_con.attr('style', '');
-          $this_btn.text('menu').removeClass('close_btn');
+          $this_btn.removeClass('close_btn');
         }else{
           $show_con.show();
-          $this_btn.text('close').addClass('close_btn');
+          $this_btn.addClass('close_btn');
         }
       });
       
@@ -38,8 +38,10 @@
     $show_con2.slideToggle(400, function(){
         if($this_btn.hasClass('close_btn')){
           $show_con2.show();
+          $this_btn.text('close');
         }else{
           $show_con2.attr('style', '');
+          $this_btn.text('menu');
         }
     });
   }

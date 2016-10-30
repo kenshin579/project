@@ -112,16 +112,18 @@
   var count = ['one', 'two', 'three'];
   var class_name = 'gallery-';
 
-  //썸네네일 이미지 버튼 클릭
+  //썸네일 이미지 버튼 클릭
   $.each($slide_btns, function(index, el){
     var $btn = $slide_btns.eq(index);
     $btn.on('click', function(e) {
       e.preventDefault();
-      clearInterval(imgSlide);
       removeClasses();
       $btn.parent().siblings().find('.btn_on').removeClass('btn_on');
       $btn.addClass('btn_on');
       $gallery_view.addClass(class_name + count[index]);
+      var btn_index = $btn.parent().index();
+      // console.log(btn_index);
+      imgIndex = btn_index;
     });
   });
 
@@ -130,17 +132,17 @@
       $gallery_view.removeClass(class_name + count[i]);
     }
   }
-  
+
   // 이미지 썸네일 + 배경 이미지 자동 캐러셀
   var imgIndex = 0;
-  var imgSlide = setInterval(function(){
+  setInterval(function(){
     imgIndex++; 
     $gallery_view.removeClass(class_name + count[imgIndex-1]);
     $slide_btns.parent().siblings().find('.btn_on').removeClass('btn_on');
     if(imgIndex > count.length-1){imgIndex = 0;}
     $gallery_view.addClass(class_name + count[imgIndex]);
     $slide_btns.eq(imgIndex).addClass('btn_on');
-  },3000);
+  },2000);
 
 }(this, this.jQuery));
 

@@ -142,7 +142,7 @@
     if(imgIndex > count.length-1){imgIndex = 0;}
     $gallery_view.addClass(class_name + count[imgIndex]);
     $slide_btns.eq(imgIndex).addClass('btn_on');
-  },2000);
+  },3000);
 
 }(this, this.jQuery));
 

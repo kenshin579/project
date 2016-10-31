@@ -106,11 +106,13 @@
 //img carousel
 (function(global, $){
   'use strict';
+  // 변수
   var $gallery_view = $('.large-right-con');
   var $slide_gallery = $('.slide_img_btn');
   var $slide_btns = $slide_gallery.find('a');
   var count = ['one', 'two', 'three'];
   var class_name = 'gallery-';
+  var imgIndex = 0;
 
   //썸네일 이미지 버튼 클릭
   $.each($slide_btns, function(index, el){
@@ -118,31 +120,37 @@
     $btn.on('click', function(e) {
       e.preventDefault();
       removeClasses();
-      $btn.parent().siblings().find('.btn_on').removeClass('btn_on');
+      imgChange($btn, index);
       $btn.addClass('btn_on');
-      $gallery_view.addClass(class_name + count[index]);
+      // 상태변수 : 썸네일 이미지의 인덱스 값을 담는 변수
       var btn_index = $btn.parent().index();
       // console.log(btn_index);
+      // 이미지의 인덱스변수에 썸네일이미지 인덱스 값을 할당
       imgIndex = btn_index;
     });
   });
 
+  // 이미지 썸네일 + 배경 이미지 자동 캐러셀
+  setInterval(function(){
+    imgIndex++; 
+    removeClasses();
+    if(imgIndex > count.length-1){imgIndex = 0;}
+    imgChange($slide_btns, imgIndex);
+    $slide_btns.eq(imgIndex).addClass('btn_on');
+  },3000);
+
+  // bg 이미지 갤러리 클래스 삭제
   function removeClasses() {
     for ( var i=0, l=count.length; i<l; i++ ) {
       $gallery_view.removeClass(class_name + count[i]);
     }
   }
 
-  // 이미지 썸네일 + 배경 이미지 자동 캐러셀
-  var imgIndex = 0;
-  setInterval(function(){
-    imgIndex++; 
-    $gallery_view.removeClass(class_name + count[imgIndex-1]);
-    $slide_btns.parent().siblings().find('.btn_on').removeClass('btn_on');
-    if(imgIndex > count.length-1){imgIndex = 0;}
-    $gallery_view.addClass(class_name + count[imgIndex]);
-    $slide_btns.eq(imgIndex).addClass('btn_on');
-  },3000);
+  //이미지 체인지
+  function imgChange(btn, index) {
+    btn.parent().siblings().find('.btn_on').removeClass('btn_on');
+    $gallery_view.addClass(class_name + count[index]);
+  }
 
 }(this, this.jQuery));
 

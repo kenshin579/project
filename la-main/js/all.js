@@ -56,7 +56,8 @@
   moreBtn();
 
   //탑버튼 부드러운 스크롤
-  $('.back_top').on('click',function(){
+  $('.back_top').on('click',function(e){
+    e.preventDefault();
     $('html, body').animate({'scrollTop': '0px' }, 500 );
   });
 

@@ -1,0 +1,101 @@
+body * {
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  font: 16px/1.5 "Open Sans",sans-serif;
+  color: #464646;
+}
+.content-wrap{
+  float: left;
+  width: 100%;
+}
+.content-wrap:hover{
+  position: relative;
+  background: #FFF2E4;
+}
+.content-wrap:hover .photo{
+  filter: grayscale(0%);
+}
+/* 마우스 호버 */
+.content-wrap:hover::after{
+  content: "";
+  position: absolute;
+  z-index: 99;
+  left:50%;
+  margin-left: -20px;
+  top:50%;
+  margin-top: -20px;
+  width: 0;
+  height: 0;
+  border-right: 20px solid #FFF2E4;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+.right-arrow.content-wrap:hover::after{
+  margin-left: 0;
+  border-right: 20px solid transparent;
+  border-left: 20px solid #FFF2E4;
+}
+.cf::after{
+  content:"";
+  display: block;
+  clear: both;
+}
+.photo{
+  width: 50%;
+  height: auto;
+  float: left;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+.wrap-half{
+  width: 50%;
+}
+.align-right{
+  float: right;
+}
+.txt-box{
+  text-align: center;
+  float: right;
+  width:50%;
+  box-sizing: border-box;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-top: 50px;
+}
+.name{
+  font: 19px/1.1 "Montserrat",sans-serif;
+  margin-bottom: 18px;
+}
+.txt::after{
+  content: "";
+  display: block;
+  border-bottom: 1px solid #464646;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 13px;
+  margin-bottom: 15px;
+}
+.icon-twitter{
+  width: 20px;
+  height: 20px;
+  background:url("../images/icon-twitter.png") no-repeat;
+  background-size: contain;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ir {
+  display: block;
+  text-indent: -9999em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.icon-twitter:hover{
+  background:url("../images/icon-twitter-on.png") no-repeat;
+  background-size: contain;
+}

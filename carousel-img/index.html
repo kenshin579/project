@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Images Carousel</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/carousel.js"></script>
+  </head>
+  <body>
+
+    <article class="carousel-container">
+    <h1 class="readable-hidden">Images Carousel</h1>
+    <!-- indicator control버튼 
+    - 자바스크립트로 동적으로 추가 하는것이 좋다 
+    왜? 
+    1. 문서 마크업이 깔끔하게 
+    2. 유지보수 관점
+    - indicator : 나중 이미지가 추가될때 이미지 갯수에 따라 동적으로 알아서 추가 되게끔  -->
+      <div class="carousel-controls">
+        <div class="carousel-indicator">
+          <button type="button" class=" ir carousel-tab">product view 01</button>
+          <button type="button" class=" ir carousel-tab">product view 02</button>
+          <button type="button" class=" ir carousel-tab">product view 03</button>
+          <button type="button" class=" ir carousel-tab">product view 04</button>
+        </div>
+        <div class="carousel-navigation">
+          <button type="button" class="ir carousel-previous-btn">previous product view</button>
+          <button type="button" class="ir carousel-next-btn">next product view</button>
+        </div>
+      </div>
+      <div class="carousel-view clearfix">
+        <img class="active-view" src="images/01.jpg" alt="product 01">
+        <img src="images/02.jpg" alt="product 02">
+        <img src="images/03.jpg" alt="product 03">
+        <img src="images/04.jpg" alt="product 04">
+      </div>
+    </article>
+
+  </body>
+</html>

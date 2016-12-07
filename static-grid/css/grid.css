@@ -1,0 +1,168 @@
+@charset "utf-8";
+/**
+ * Grid System (80 [unit(60) + gutter(20)], 12 columns)
+ * 960 - 20 = 940px
+ * base-font-size: 16px
+ * base-leading-ratio: 1.5; // 16 * 1.5 = 24px
+ * gutter-direction: after; // margin-right: 20px;
+ */
+
+/**
+ * --------------------------------
+ * Overlay Grid Guideline Module
+ * ----------------------------- */
+.grid-container::before {
+  content: '';
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500vh;
+}
+
+.grid-container.show-grid::before {
+  background:
+    linear-gradient(90deg, rgba(191, 64, 64, 0.3) 81%, rgba(0, 0, 0, 0) 81%),
+    linear-gradient(rgba(0, 0, 0, 0) 23px, #26923f 23px); 
+  background-size:
+    80px 1px,
+    1px 24px;
+}
+
+
+/**
+ * --------------------------------
+ * Grid Container Module
+ * ----------------------------- */
+.grid-container { 
+  position: relative; 
+  width: 940px; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+/**
+ * --------------------------------
+ * Grid Module
+ * ----------------------------- */
+.grid::after { content: ''; display: block; clear: both; }
+
+/**
+ * --------------------------------
+ * Unit Module
+ * ----------------------------- */
+.grid [class*="unit-"] {float: left; margin-right: 20px;}
+.grid .last, .grid .omega {margin-right: 0;}
+.grid .unit-1 { width: 60px; }
+.grid .unit-2 { width: 140px; }
+.grid .unit-3 { width: 220px; }
+.grid .unit-4 { width: 300px; }
+.grid .unit-5 { width: 380px; }
+.grid .unit-6 { width: 460px; }
+.grid .unit-7 { width: 540px; }
+.grid .unit-8 { width: 620px; }
+.grid .unit-9 { width: 700px; }
+.grid .unit-10 { width: 780px; }
+.grid .unit-11 { width: 860px; }
+.grid .unit-12 { width: 940px; }
+
+/* push  ,   pull */
+.grid [class*="push-"],
+.grid [class*="pull-"]{position: relative;}
+
+.push-1{ left: 80px }
+.push-2{ left: 160px }
+.push-3{ left: 240px }
+.push-4{ left: 320px }
+.push-5{ left: 400px }
+.push-6{ left: 480px }
+.push-7{ left: 560px }
+.push-8{ left: 640px }
+.push-9{ left: 720px }
+.push-10{ left: 800px }
+.push-11{ left: 880px }
+.push-12{ left: 960px }
+
+
+.pull-1{ right: 80px }
+.pull-2{ right: 160px }
+.pull-3{ right: 240px }
+.pull-4{ right: 320px }
+.pull-5{ right: 400px }
+.pull-6{ right: 480px }
+.pull-7{ right: 560px }
+.pull-8{ right: 640px }
+.pull-9{ right: 720px }
+.pull-10{ right: 800px }
+.pull-11{ right: 880px }
+.pull-12{ right: 960px }
+
+
+/* prefix  subfix  */
+.prefix-1{ margin-left: 80px }
+.prefix-2{ margin-left: 160px }
+.prefix-3{ margin-left: 240px }
+.prefix-4{ margin-left: 320px }
+.prefix-5{ margin-left: 400px }
+.prefix-6{ margin-left: 480px }
+.prefix-7{ margin-left: 560px }
+.prefix-8{ margin-left: 640px }
+.prefix-9{ margin-left: 720px }
+.prefix-10{ margin-left: 800px }
+.prefix-11{ margin-left: 880px }
+.prefix-12{ margin-left: 960px }
+
+.subfix-1{ margin-right: 80px }
+.subfix-2{ margin-right: 160px }
+.subfix-3{ margin-right: 240px }
+.subfix-4{ margin-right: 320px }
+.subfix-5{ margin-right: 400px }
+.subfix-6{ margin-right: 480px }
+.subfix-7{ margin-right: 560px }
+.subfix-8{ margin-right: 640px }
+.subfix-9{ margin-right: 720px }
+.subfix-10{ margin-right: 800px }
+.subfix-11{ margin-right: 880px }
+.subfix-12{ margin-right: 960px }
+
+/**
+ * --------------------------------
+ * Prefix, Suffix Module
+ * margin
+ * padding
+ * ----------------------------- */
+.grid .padding-prefix-1{ padding-left: 80px }
+.grid .padding-prefix-2{ padding-left: 160px }
+.grid .padding-prefix-3{ padding-left: 240px }
+.grid .padding-prefix-4{ padding-left: 320px }
+.grid .padding-prefix-5{ padding-left: 400px }
+.grid .padding-prefix-6{ padding-left: 480px }
+.grid .padding-prefix-7{ padding-left: 560px }
+.grid .padding-prefix-8{ padding-left: 640px }
+.grid .padding-prefix-9{ padding-left: 720px }
+.grid .padding-prefix-10{ padding-left: 800px }
+.grid .padding-prefix-11{ padding-left: 880px }
+.grid .padding-prefix-12{ padding-left: 960px }
+
+.grid .padding-subfix-1{ padding-right: 80px }
+.grid .padding-subfix-2{ padding-right: 160px }
+.grid .padding-subfix-3{ padding-right: 240px }
+.grid .padding-subfix-4{ padding-right: 320px }
+.grid .padding-subfix-5{ padding-right: 400px }
+.grid .padding-subfix-6{ padding-right: 480px }
+.grid .padding-subfix-7{ padding-right: 560px }
+.grid .padding-subfix-8{ padding-right: 640px }
+.grid .padding-subfix-9{ padding-right: 720px }
+.grid .padding-subfix-10{ padding-right: 800px }
+.grid .padding-subfix-11{ padding-right: 880px }
+.grid .padding-subfix-12{ padding-right: 960px }
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Static Grid Wireframe Web</title>
+    <link rel="stylesheet" href="../resources/reset/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font-awsesome CDN -->
+    <script src="https://use.fontawesome.com/6da4249385.js"></script>
+    <!-- 구글맵 -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClvM8t1Wz06uTt8hQcm4KZyDZerrioFB0&sensor=true"></script>
+
+    <script>
+      function initialize() {
+        var mapProp = {
+          center:new google.maps.LatLng(37.517553, 127.018153),
+          zoom:17,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map=new google.maps.Map(document.getElementById("map_box"),mapProp);
+
+        var marker = new google.maps.Marker({
+          map: map,
+          position: {lat: 37.517553, lng: 127.018153}
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  
+  </head>
+
+  <body class="grid-container show-grid">
+    <!-- 헤더 -->
+    <div class="header_wrapping">
+      <section class="header_wrap grid">
+        <h1 class="logo unit-2 last"><a href="#"><img src="img/logo-w.png" alt="인도로 가는길 로고"></a></h1>
+        <nav class="gnb unit-9">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">WORK</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+    <!-- 메인 -->
+    <main class="grid">
+
+      <!-- 비디오 슬라이드 -->
+      <div class="slider_wrapping">
+        <section class="slider_wrap">
+          <h2 class="hidden_text">비디오 슬라이드</h2>
+          <div class="btn_wrap unit-12">
+            <button type="button" class="play_btn fa fa-play-circle unit-2 push-5"><span class="hidden_text">재생 버튼</span></button>
+            <button type="button" class="prev_btn unit-1 pull-2"><span class="hidden_text">이전 버튼</span></button>
+            <button type="button" class="next_btn unit-1 push-8 last"><span class="hidden_text">다음 버튼</span></button>
+          </div>
+        </section>
+      </div>
+      
+      <!-- 콘텐츠 묶음 -->
+      <div class="con_wrapping">
+        <!--  -->
+        <section class="content_wrap">
+          <h2 class="content_title">인도로 가는 길</h2>
+          <!-- 마크업순서 : 제목 -> 관련이미지 -> 문단  -->
+          <article class="content_01 unit-4">
+            <h3>Varanasi Ganges River</h3>
+            <img src="img/content-img/varanasi.jpg" alt="바라나시 겐지스 강" width="300" height="216" >
+            <p>
+              힌두교도 인들의 성스러운 강
+              산스크리트나 힌디어로는 강가(Ga갠지스 강 본문 이미지 1gā)라고 한다. 길이 2,460km, 유역면적 약 173만 ㎢이며, 힌두교도들은 ‘성스러운 강’으로 숭앙하고 있다. 힌두교도 사이에서는 이 강물에 목욕재계하면 모든 죄를 면할 수 있으며, 죽은 뒤에 이 강물에 뼛가루를 흘려보내면 극락에 갈 수 있다고 믿고 있다. 갠지스강 유역에는 연간 100만 이상의 순례자가 찾아드는 유명한 바라나시를 비롯하여 하르드와르·알라하바드 등 수많은 힌두교 성지가 있다.
+            </p>
+          </article>
+
+          <article class="content_02 unit-4">
+            <h3>Agra Taj Mahal</h3>
+            <img src="img/content-img/taji-mahal.jpg" alt="타지마할" width="300" height="216" >
+            <p>
+              시공을 초월한 완벽한 아름다움
+              아내의 죽음을 애도하며 22년 동안이나 그 무덤을 지었다는 한 남자의 시공을 초월한 사랑이 깃들었기 때문일까? 인도 이슬람 예술의 걸작 타지마할은 그야말로 시공을 초월한 절대적인 아름다움을 보여준다. 순백의 대리석은 태양의 각도에 따라 하루에도 몇 번씩 빛깔을 달리하며 보는 사람의 넋을 빼놓고, 웅장한 건물은 중압감은커녕 오히려 공중에 떠있는 듯 신비롭고, 건물과 입구의 수로 및 정원의 완벽한 좌우대칭은 균형미와 정갈함을 느끼게 한다.
+            </p>
+          </article>
+
+
+          <article class="content_03 unit-4 last">
+            <h3>Darjeeling</h3>
+            <img src="img/content-img/darjeeling.jpg" alt="인도 고산지대 다르질링" width="300" height="216">
+            <p>
+              시킴 지방의 남쪽, 해발고도 2,287m의 히말라야산맥 남동쪽 기슭에 있으며, 휴양지 또는 관광지로서 알려져 있다. 가장 기온이 높은 7∼8월의 평균기온도 16℃ 정도이다. 1년의 대부분이 안개가 끼지만 날씨가 맑을 때에는 2,175m의 높은 지점에 있는 전망대에서 70km나 떨어져 있는 칸첸중가산(8,598m)의 훌륭한 산용(山容)을 볼 수 있다. 또 교외의 타이거힐(2,400m)에서 바라다보이는 히말라야산맥의 절경도 유명하다
+            </p>
+          </article>
+        </section>
+
+        <!-- 이미지 슬라이드 -->
+        <!-- 캐러셀 마크업순서: indicator -> 이미지 -> 이전 다음 버튼  -->
+        <section class="slider_img_wrap">
+          <h2 class="hidden_text">슬라이드 이미지</h2>
+          <ul class="indicator unit-12 last">
+            <li><a href="#" class="btn_off"><span class="hidden_text">1번이미지</span></a></li>
+            <li><a href="#" class="btn_on"><span class="hidden_text">2번이미지</span></a></li>
+            <li><a href="#" class="btn_off"><span class="hidden_text">3번이미지</span></a></li>
+            <li><a href="#" class="btn_off"><span class="hidden_text">4번이미지</span></a></li>
+            <li><a href="#" class="btn_off"><span class="hidden_text">5번이미지</span></a></li>
+          </ul>
+          <ul class="slider_imgages">
+            <li>
+              <img src="http://placehold.it/940x336/f8dec5/fff/?text=img" alt="img" width="940" height="336">
+            </li>
+          </ul>
+          <div class="btn_wrap">
+            <button type="button" class="prev_btn unit-1"><span class="hidden_text">이전 이미지로 이동</span></button>
+            <button type="button" class="next_btn unit-1 push-10 last"><span class="hidden_text">다음 이미지로 이동</span></button>
+          </div>
+        </section>
+        
+        <!-- 작가들 -->
+        <!-- 마크업순서 : 제목 -> 문단 -> 사람이미지(백그라운드이미지로?) -->
+        <section class="makers_wrap unit-12 last">
+          <h2 class="makers_title">인도로 가는 길잡이들</h2>
+          <ul>
+            <li class="unit-6">
+              <div class="marker_text unit-4 last push-2">
+                <h3>사프나</h3>
+                <p>길위에서 만난 소중한 인연들을 기다리며....<br>나마스떼.</p>
+              </div>
+              <div class="marker_img unit-2 last pull-4">
+                <img src="img/content-img/guide-1.png" alt="사프나" width="100" height="100">
+              </div>
+            </li>
+            <li class="unit-6 last">
+              <div class="marker_text unit-4 last push-2">
+                <h3>작은바이킹</h3>
+                <p>낯선 곳에서 또 다른 나를 만나는 인도<br>안내해 드리겠습니다.</p>
+              </div>
+              <div class="marker_img unit-2 last pull-4">
+                <img src="img/content-img/guide-2.png" alt="작은바이킹" width="100" height="100">
+              </div>
+            </li>
+            <li class="unit-6">
+              <div class="marker_text unit-4 last push-2">
+                <h3>라이카</h3>
+                <p>묘한 이끌림을 풍기는 나라 인도 <br>그게 좋다.</p>
+              </div>
+              <div class="marker_img unit-2 last pull-4">
+                <img src="img/content-img/guide-3.png" alt="라이카" width="100" height="100">
+              </div>
+            </li>
+            <li class="unit-6 last">
+              <div class="marker_text unit-4 last push-2">
+                <h3>써니</h3>
+                <p>차는 차도로 사람은 인도로 라는 장난 말로<br> 시작한 인도 여행</p>
+              </div>
+              <div class="marker_img unit-2 last pull-4">
+                <img src="img/content-img/guide-4.png" alt="써니" width="100" height="100">
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+        <!-- 구글맵  -->
+        <section class="map_wrap">
+          <h2 class="hidden_text">약도</h2>
+          <div id="map_box" height="360"></div>
+        </section>
+      
+      <!-- 문의하기 -->
+      <div class="inquire_wrapping">
+        <section class="inquire_wrap">
+          <h2 class="inquire_title">여행 문의하기</h2>
+          <form>
+            <label for="your_name" class="hidden_text">your name</label>
+            <input id="your_name" class="input_name unit-6" type="text" name="your_name" placeholder="Your Name">
+            <label for="your_email" class="hidden_text">your email</label>
+            <input id="your_email" class="input_email unit-6 last" type="email" name="your_email" placeholder="Your Email">
+            <textarea class="txtarea unit-12 last" placeholder="Your Message"></textarea>
+          </form>
+          <button type="submit" class="fa fa-send unit-4 push-4 last">메세지 전송</button>
+        </section>
+      </div>
+
+    </main>
+      
+    <!-- 풋터 -->
+    <section class="footer_wrap">
+      <h2 class="hidden_text">Copyright</h2>
+      <p>Copyright &copy; 2016 A passage to India.</p>
+    </section>
+
+  </body>
+</html>

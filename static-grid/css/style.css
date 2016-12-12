@@ -1,73 +1,11 @@
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-img {
-  vertical-align: bottom;
-}
-
-.logo > a, .gnb a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.content_wrap, .slider_img_wrap, .makers_wrap, .map_wrap, .inquire_wrapping {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.hidden_text {
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-}
-
-.slider_wrap button, .slider_img_wrap .btn_wrap button {
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.content_wrap .content_title::before, .content_wrap .content_title::after, .makers_title::before, .makers_title::after, .inquire_title::before, .inquire_title::after {
-  content: '';
-  display: inline-block;
-  width: 320px;
-  padding-top: 8px;
-  border-top: 1px solid #333;
-  box-sizing: border-box;
-}
-
-.slider_wrap .prev_btn, .slider_wrap .next_btn, .slider_img_wrap .btn_wrap .prev_btn, .slider_img_wrap .btn_wrap .next_btn {
-  width: 33px;
-  height: 106px;
-  background-repeat: no-repeat;
-}
-
-.input_name, .input_email, .txtarea {
-  border: 1px solid #dadee8;
-  background-color: white;
-  border-radius: 4px;
-  padding-left: 19px;
-  box-sizing: border-box;
-  font-size: 16px;
-  color: #a5a6a7;
-}
-
-/**
+/*
  * Grid System (80 [unit(60) + gutter(20)], 12 columns)
  * 960 - 20 = 940px
  * base-font-size: 16px
  * base-leading-ratio: 1.5; // 16 * 1.5 = 24px
  * gutter-direction: after; // margin-right: 20px;
  */
+ 
 /**
  * --------------------------------
  * Overlay Grid Guideline Module
@@ -85,25 +23,17 @@ img {
   left: 50%;
   transform: translateX(-50%);
   width: 940px;
-  height: 400vh;
+  height: 430vh;
   background: linear-gradient(90deg, rgba(191, 64, 64, 0.3) 60px, transparent 60px), linear-gradient(transparent 23px, #26923f 23px);
   background-size: 80px 1px, 1px 24px;
 }
 
-/*.grid-container.show-grid:hover::before{
+/*
+.grid-container.show-grid:hover::before{
   background: none;
 }
 */
-/*.grid-container::before{
-    width: 940px;
- }
-*/
 
-
-/**
- * --------------------------------
- * Grid Container Module
- * ----------------------------- */
 /**
  * --------------------------------
  * Grid Module
@@ -465,8 +395,10 @@ img {
   padding-right: 960px;
 }
 
+/* --------------- 공통 --------------- */
 body {
   color: #5a5e65;
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -484,11 +416,36 @@ h2 {
   font-weight: 400;
   line-height: 2;
 }
+a { font-family: 'Spoqa Han Sans', 'Sans-serif'; }
 
 a, button{
   cursor: pointer;
 }
 
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.hidden_text {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
+
+/* --------------- 콘텐츠 스타일 --------------- */
+/* 헤더 */
 .header_wrapping {
   width: 100%;
   height: 120px;
@@ -499,6 +456,11 @@ a, button{
   width: 940px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.logo > a, .gnb a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo {
@@ -514,7 +476,7 @@ a, button{
 }
 
 .gnb {
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .gnb > ul {
@@ -528,13 +490,30 @@ a, button{
 
 .gnb li {
   float: left;
-  margin-right: 80px;
+  margin-right: 48px;
 }
 
 .gnb li:last-child {
   margin-right: 0;
 }
 
+/* ---------------- 메인 콘텐츠 --------------- */
+.content_wrap, .slider_img_wrap, .makers_wrap, .map_wrap, .inquire_wrapping {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.content_wrap .content_title::before, .content_wrap .content_title::after, .guide_title::before, .guide_title::after, .inquire_title::before, .inquire_title::after {
+  content: '';
+  display: inline-block;
+  width: 320px;
+  padding-top: 8px;
+  border-top: 1px solid #333;
+  box-sizing: border-box;
+}
+
+/* 비디오 콘텐츠 */
 .slider_wrap {
   width: 100%;
   background-color: #f8d2c5;
@@ -556,14 +535,9 @@ a, button{
   height: 100%;
 }
 
-.btn_wrap {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
+/* 이미지 콘텐츠 */
 .content_wrap{
-  margin-top: 22px;
+  margin-top: 25px;
 }
 
 .content_wrap .content_title {
@@ -572,11 +546,11 @@ a, button{
 }
 
 .content_wrap .content_title::before {
-  margin-right: 77px;
+  margin-right: 74px;
 }
 
 .content_wrap .content_title::after {
-  margin-left: 77px;
+  margin-left: 74px;
 }
 
 [class^="content_"] {
@@ -601,13 +575,34 @@ a, button{
   margin-bottom: 26px;
 }
 
+/* 캐러셀 콘텐츠 */
 .slider_img_wrap {
   position: relative;
   width: 940px;
   height: 325px;
   overflow: hidden;
-  margin-bottom: 48px;
+  margin-bottom: 59px;
 }
+
+.btn_wrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+}
+
+.slider_img_wrap .btn_wrap button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.slider_img_wrap .btn_wrap .prev_btn, .slider_img_wrap .btn_wrap .next_btn {
+  width: 33px;
+  height: 106px;
+  background-repeat: no-repeat;
+}
+
 
 .slider_img_wrap .btn_wrap .prev_btn {
   margin-left: 10px;
@@ -654,42 +649,42 @@ a, button{
 }
 
 
-
-
-/*    */
-.makers_wrap li {
+/*  길잡이들 콘텐츠  */
+.guide_wrap li {
   margin-bottom: 48px;
   height: 120px;
 }
 
-.makers_title {
+.guide_title {
   text-align: center;
   margin-bottom: 22px;
 }
 
-.makers_title::before {
+.guide_title::before {
   margin-right: 40px;
 }
 
-.makers_title::after {
+.guide_title::after {
   margin-left: 40px;
 }
 
-.marker_img {
+.guide_img {
   text-align: center;
   padding-top: 9px;
   margin-left: 20px;
 }
 
-.marker_text {
+.guide_text {
   padding-top: 24px;
 }
 
-.marker_text p {
+.guide_text p {
   font-size: 16px;
   line-height: 1.5;
 }
 
+
+/* 구글맵 */
 .map_wrap {
   width: 100%;
   margin-bottom: 24px;
@@ -699,6 +694,7 @@ a, button{
   padding-bottom: 360px;
 }
 
+/* 문의 콘텐츠 */
 .inquire_wrap button {
   height: 72px;
   padding: 0;
@@ -713,6 +709,16 @@ a, button{
 .inquire_title {
   text-align: center;
   margin-bottom: 22px;
+}
+
+.input_name, .input_email, .txtarea {
+  border: 1px solid #dadee8;
+  background-color: white;
+  border-radius: 4px;
+  padding-left: 19px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #a5a6a7;
 }
 
 .inquire_title::before {
@@ -745,6 +751,7 @@ a, button{
   padding-top: 24px;
 }
 
+/*--------------- 하단  --------------- */
 .footer_wrap {
   width: 100%;
   position: absolute;
@@ -754,4 +761,4 @@ a, button{
   background: #1D1100;
 }
 
-/*# sourceMappingURL=../map/style.css.map */
+/*# sourceMappingURL=../map/style.css.map 

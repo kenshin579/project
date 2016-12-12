@@ -10,7 +10,6 @@
     <script src="https://use.fontawesome.com/6da4249385.js"></script>
     <!-- 구글맵 -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClvM8t1Wz06uTt8hQcm4KZyDZerrioFB0&sensor=true"></script>
-
     <script>
       function initialize() {
         var mapProp = {
@@ -27,14 +26,17 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-  
-  </head>
 
-  <body class="grid-container show-grid">
+  </head>
+  <body class="grid-container">
     <!-- 헤더 -->
     <div class="header_wrapping">
       <section class="header_wrap grid">
-        <h1 class="logo unit-2 last"><a href="#"><img src="img/logo-w.png" alt="인도로 가는길 로고"></a></h1>
+        <h1 class="logo unit-2 last">
+          <a href="#">
+            <img src="img/logo-w.png" alt="인도로 가는길 로고" width="100" height="67" >
+          </a>
+        </h1>
         <nav class="gnb unit-9">
           <ul>
             <li><a href="#">HOME</a></li>
@@ -51,16 +53,12 @@
     <main class="grid">
 
       <!-- 비디오 슬라이드 -->
-      <div class="slider_wrapping">
-        <section class="slider_wrap">
-          <h2 class="hidden_text">비디오 슬라이드</h2>
-          <div class="btn_wrap unit-12">
-            <button type="button" class="play_btn fa fa-play-circle unit-2 push-5"><span class="hidden_text">재생 버튼</span></button>
-            <button type="button" class="prev_btn unit-1 pull-2"><span class="hidden_text">이전 버튼</span></button>
-            <button type="button" class="next_btn unit-1 push-8 last"><span class="hidden_text">다음 버튼</span></button>
-          </div>
-        </section>
-      </div>
+      <section class="slider_wrap">
+        <h2 class="hidden_text">비디오 슬라이드</h2>
+        <div class='embed-container'>
+          <iframe src='https://www.youtube.com/embed//zTiMeJrdJnQ' frameborder='0' allowfullscreen></iframe>
+        </div>
+      </section>
       
       <!-- 콘텐츠 묶음 -->
       <div class="con_wrapping">
@@ -101,15 +99,37 @@
         <section class="slider_img_wrap">
           <h2 class="hidden_text">슬라이드 이미지</h2>
           <ul class="indicator unit-12 last">
-            <li><a href="#" class="btn_off"><span class="hidden_text">1번이미지</span></a></li>
-            <li><a href="#" class="btn_on"><span class="hidden_text">2번이미지</span></a></li>
-            <li><a href="#" class="btn_off"><span class="hidden_text">3번이미지</span></a></li>
-            <li><a href="#" class="btn_off"><span class="hidden_text">4번이미지</span></a></li>
-            <li><a href="#" class="btn_off"><span class="hidden_text">5번이미지</span></a></li>
+            <li>
+              <a href="#" class="indicator_btn btn_off"><span class="hidden_text">1번 이미지</span></a>
+            </li>
+            <li>
+              <a href="#" class="indicator_btn btn_off"><span class="hidden_text">2번 이미지</span></a>
+            </li>
+            <li>
+              <a href="#" class="indicator_btn btn_off"><span class="hidden_text">3번 이미지</span></a>
+            </li>
+            <li>
+              <a href="#" class="indicator_btn btn_off"><span class="hidden_text">4번 이미지</span></a>
+            </li>
+            <li>
+              <a href="#" class="indicator_btn btn_off"><span class="hidden_text">5번 이미지</span></a>
+            </li>
           </ul>
           <ul class="slider_imgages">
             <li>
-              <img src="http://placehold.it/940x336/f8dec5/fff/?text=img" alt="img" width="940" height="336">
+              <img src="img/carousel/01.jpg" alt="순례자들" width="940" height="325">
+            </li>
+            <li>
+              <img src="img/carousel/02.jpg" alt="바라나시의 노을진 풍경" width="940" height="325">
+            </li>
+            <li>
+              <img src="img/carousel/03.jpg" alt="인도 정통복 사리를 입은 여인들" width="940" height="325">
+            </li>
+            <li>
+              <img src="img/carousel/04.jpg" alt="디아에 불을 켜는 부녀" width="940" height="325">
+            </li>
+            <li>
+              <img src="img/carousel/05.jpg" alt="인도 여자 어린이" width="940" height="325">
             </li>
           </ul>
           <div class="btn_wrap">
@@ -134,7 +154,7 @@
             </li>
             <li class="unit-6 last">
               <div class="marker_text unit-4 last push-2">
-                <h3>작은바이킹</h3>
+                <h3>바이킹</h3>
                 <p>낯선 곳에서 또 다른 나를 만나는 인도<br>안내해 드리겠습니다.</p>
               </div>
               <div class="marker_img unit-2 last pull-4">
@@ -192,5 +212,9 @@
       <p>Copyright &copy; 2016 A passage to India.</p>
     </section>
 
+    <!-- 그리드 토글 -->
+    <script src="js/grid-system.js"></script>
+    <!-- 캐레셀 -->
+    <script src="js/carousel.js"></script>
   </body>
 </html>

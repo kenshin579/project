@@ -1,10 +1,9 @@
 /*
 
-- 지금 코드는 스크립트 코드를 body요소 하단에 선언했는데
 - head안에 스크립트 코드를 선언하면 렌더링이 되지 않은 상태여서 스크립트는 대상들을 못찾음. (변수들은 비어있음.)
-  + **해결은 : onload 이벤트**
-  + 초기화 할 대상들을 함수로 묶어줘(그룹화) 그리고 
-  + 웹부라우져에 실행문서가 다 로딩된 시점에 온로드 이벤트를 걸어서 함수 실행
+  + ** 해결 : onload 이벤트 **
+  + 초기화 할 대상들을 함수로 그룹화 그리고 
+  + 웹브라우져에 실행문서가 다 로딩된 시점에 온로드 이벤트를 걸어서 함수 실행
 
 */
 
@@ -24,22 +23,27 @@ function init() {
   var view_contents   = view.querySelectorAll('img');
   var tabs            = container.querySelectorAll('.carousel-tab');
   var tabs_total      = tabs.length;
-  var prev_button     = document.querySelector('.carousel-previous-btn');
-  var next_button     = document.querySelector('.carousel-next-btn');
+  var prev_button     = document.querySelector('.previous-btn');
+  var next_button     = document.querySelector('.next-btn');
 
+  // 이미지 타이틀 동적으로 요소 생성
+  var body = document.body;
+  var div_text_box = document.createElement('div');
+  body.appendChild(div_text_box);
+  div_text_box.setAttribute('class', 'img-title');
 
   // 이미지를 감산 콘텐츠 영역(.carousel-view) 가로 폭을 
   // 포함하는 이미지 개수의 폭을 합친 만큼 설정
   view.style.width = container_width  * tabs_total + 'px';
 
-  // 부모 너비가 700px , 이미지가 총 4장이라면
-  // 700 * 4 = 2800px 
-  // view의 총너비는 2800px
+  // 부모 너비가 600px , 이미지가 총 4장이라면
+  // 600 * 4 = 2400px 
+  // view의 총너비는 2400px
 
   // ------------ 이때 CSS는 ----------------
   // 캐러셀 컨텐츠를 모두 감사고 있는 부모
   // .carousel-container 
-  //    width: 700px;
+  //    width: 600px;
   //    height: auto;
   //    overflow: hidden;  
   // 부모안에 있는 이미지
@@ -51,7 +55,7 @@ function init() {
   for ( var k=0, j=view_contents.length; k<j; k++ ) {
     view_contents[k].style.width = container_width + 'px';
     // 이미지 너비  = 캐러셀 컨텐츠를 모두 감사고 있는 부모너비 
-    // 각 이미지의 너비는 700px 된다.
+    // 각 이미지의 너비는 600px 된다.
   }
 
   //인디케이터 반복 순환 
@@ -125,6 +129,10 @@ function init() {
     selected_tab = tab; //런타임 중에 값은 바뀔수있다 
 
     view.style.transform = 'translateX('+ ( -1 * num * container_width )+'px)';
+
+    var title = document.querySelector('.img-title');
+    var img_alt = view_contents[num].getAttribute('alt');
+    title.innerHTML = img_alt;
   }
 
   // 사용자 액션 시뮬레이션

@@ -5,7 +5,7 @@
  * base-leading-ratio: 1.5; // 16 * 1.5 = 24px
  * gutter-direction: after; // margin-right: 20px;
  */
- 
+
 /**
  * --------------------------------
  * Overlay Grid Guideline Module
@@ -398,6 +398,9 @@
 /* --------------- 공통 --------------- */
 body {
   color: #5a5e65;
+}
+
+body, input, textarea, button {
   font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
 

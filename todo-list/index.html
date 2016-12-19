@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  </head>
+  <body data-ng-app="todoapp" class="app_body">
+    <div class="controller" data-ng-controller="todoappCtrl">
+      <h1>SSEOM's To Do List  <span> {{status}} </span> </h1>
+      <!-- todo list add -->
+      <div class="add_todo">
+        <form data-ng-submit="addTodo(newTodo)">
+          <input type="text" data-ng-model="newTodo" placeholder="해야 할 일을 기록 해보세요." autofocus>
+          <button type="submit">할 일 추가</button>
+        </form>
+      </div>
+      <!-- todo list view -->
+      <!-- ngRepeat : 반복 순환문-->
+      <div class="list_view">
+        <ul >
+          <li data-ng-repeat="todo in todos | filter:statusFilter">
+              <todo-item todo="todo" remove="remove(todo.id)"></todo-item>
+          </li>
+        </ul>
+      </div>
+
+      <!-- list filter btn -->
+      <div class="btn-group" role="group" aria-label="to do list filter button">
+        <button type="button" data-ng-click="status=''">모든 할 일</button>
+        <button type="button" data-ng-click="status='Active'">진행 중인 일</button>
+        <button type="button" data-ng-click="status='Completed'">완료된 일</button>
+        <button type="button" data-ng-click="clearCompleted()">완료된 일 삭제</button>
+      </div>
+
+      <!-- 양바인딩 배열정보 -->
+      <!-- <pre>{{todos | json}}</pre> -->
+
+    </div>
+    
+    <script src="module/app.js"></script>
+    <script src="module/controller/todoappCtrl.js"></script>
+    <script src="module/directives/todoItem.js"></script>
+    <script src="module/services/todoStorage.js"></script>
+
+  </body>
+</html>

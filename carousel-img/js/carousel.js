@@ -135,7 +135,7 @@ function init() {
     title.innerHTML = img_alt;
   }
 
-  // 사용자 액션 시뮬레이션
+  // 사용자 액션
   tabs[0].onclick();
 
 }

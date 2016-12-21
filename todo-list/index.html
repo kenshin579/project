@@ -23,7 +23,7 @@
       <!-- todo list view -->
       <!-- ngRepeat : 반복 순환문-->
       <div class="list_view">
-        <ul >
+        <ul>
           <li data-ng-repeat="todo in todos | filter:statusFilter">
               <todo-item todo="todo" remove="remove(todo.id)"></todo-item>
           </li>

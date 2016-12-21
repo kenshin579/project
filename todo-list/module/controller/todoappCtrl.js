@@ -16,10 +16,10 @@ angular.module('todoapp')
       }
 
       $scope.$watch('status', function () {
-        if ($scope.status === 'completed') {
-          $scope.statusFilter = {completed: true};
-        } else if ($scope.status === 'active') {
-          $scope.statusFilter = {completed: false};
+        if ($scope.status === 'Completed') {
+          $scope.statusFilter = { completed: true };
+        } else if ($scope.status === 'Active') {
+          $scope.statusFilter = { completed: false };
         } else {
           $scope.statusFilter = {};
         }

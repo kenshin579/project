@@ -517,6 +517,9 @@ img {
 }
 
 /* 비디오 콘텐츠 */
+iframe{
+  border: none;
+}
 .slider_wrap {
   width: 100%;
   background-color: #f8d2c5;
@@ -695,6 +698,7 @@ img {
 
 #map_box {
   padding-bottom: 360px;
+  /*pointer-events: none;*/
 }
 
 /* 문의 콘텐츠 */

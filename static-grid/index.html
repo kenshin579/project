@@ -17,15 +17,15 @@
     <script>
       function initialize() {
         var mapProp = {
-          center:new google.maps.LatLng(37.517553, 127.018153),
-          zoom:17,
+          center:new google.maps.LatLng(37.572839, 126.985184),
+          zoom: 15,
           mapTypeId:google.maps.MapTypeId.ROADMAP
         };
         var map=new google.maps.Map(document.getElementById("map_box"),mapProp);
 
         var marker = new google.maps.Marker({
           map: map,
-          position: {lat: 37.517553, lng: 127.018153}
+          position: {lat: 37.572839, lng: 126.985184}
         });
       }
       google.maps.event.addDomListener(window, 'load', initialize);
@@ -61,7 +61,7 @@
       <section class="slider_wrap">
         <h2 class="hidden_text">비디오 슬라이드</h2>
         <div class='embed-container'>
-          <iframe src='https://www.youtube.com/embed//zTiMeJrdJnQ' frameborder='0' allowfullscreen></iframe>
+          <iframe src='https://www.youtube.com/embed//zTiMeJrdJnQ' allowfullscreen></iframe>
         </div>
       </section>
       
@@ -192,7 +192,7 @@
         <!-- 구글맵  -->
         <section class="map_wrap">
           <h2 class="hidden_text">약도</h2>
-          <div id="map_box" height="360"></div>
+          <div id="map_box"></div>
         </section>
       
       <!-- 문의하기 -->

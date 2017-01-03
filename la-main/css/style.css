@@ -235,13 +235,13 @@ a {
   text-decoration: none;
 }
 
-.skip_wrap,.gnb_wrap,.title_wrap,.slide_wrap,.chicken_wrap,.stories_wrap,.map_wrap,.inquire_wrapping,.footer_wrap {
+.skip_wrap,.gnb_wrap,.title_wrap,.slide_wrap,.chicken_wrap,.stories_wrap,.inquire_wrapping,.footer_wrap {
   display: block;
   clear: both;
   content: "";
 }
 
-.skip_wrap .skip_manu> h2,.skip_wrap button span,.main_skip,.slide_wrap h3,.close_btn span,.map_wrap h3,.hidden_text,.footer_wrap h3 {
+.skip_wrap .skip_manu> h2,.skip_wrap button span,.main_skip,.slide_wrap h3,.close_modal_btn span,.hidden_text,.footer_wrap h3 {
   overflow: hidden;
   position: absolute;
   width: 1px;
@@ -863,7 +863,7 @@ p {
   background-color: #fefefe;
 }
 
-.close_btn {
+.close_modal_btn {
   float: right;
   margin-bottom: 20px;
   border: none;
@@ -872,11 +872,11 @@ p {
   transition: all .5s;
 }
 
-.close_btn i {
+.close_modal_btn i {
   font-size: 33px;
 }
 
-.close_btn:hover,.close_btn:focus {
+.close_modal_btn:hover i,.close_modal_btn:focus i {
   background-color: #444;
   color: #fff;
   border-radius: 50%;
@@ -933,16 +933,6 @@ p {
 
 .more_btn.click {
   display: none;
-}/**
- * ---------------------
- * map
- * --------------------- */.map_wrap {
-  width: 100%;
-  margin-bottom: 24px;
-}
-
-#map_box {
-  padding-bottom: 360px;
 }/**
  * ---------------------
  * inquire_wrapping

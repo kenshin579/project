@@ -326,7 +326,9 @@
   var modal = document.querySelectorAll(".modal");
   var modal_num = modal.length;
   var modal_btn = document.querySelectorAll(".modal_btn");
-  var close_btn = document.querySelectorAll(".close_btn");
+  var close_modal_btn = document.querySelectorAll(".close_modal_btn");
+  var modal_con_list = document.querySelectorAll(".modal_stories_list");
+  var index;
 
 
   // 순환
@@ -335,22 +337,30 @@
     var modal_open_btn = modal_btn[i];
     modal_open_btn.num = i;
 
-    modal_open_btn.onclick = function() {
-      // console.log(this.num);
-      var index = this.num;
-      body.classList.add('modal_on');
-      modal[index].style.display = "block";
-    }
+    var modal_stories_list = modal_con_list[i];
+    modal_stories_list.num = i;
 
-    var close_con_btn = close_btn[i];
+    var close_con_btn = close_modal_btn[i];
     close_con_btn.num = i;
 
-    close_con_btn.onclick = function() {
-        var index = this.num;
-        body.classList.remove('modal_on');
-        modal[index].style.display = "none";
-    }
 
+    modal_open_btn.onclick = modalOpen;
+    modal_stories_list.onclick = modalOpen;
+    close_con_btn.onclick = modalClose;
+  }
+
+  // 모달콘텐츠 오픈
+  function modalOpen() {
+    // console.log(this.num);
+    index = this.num;
+    body.classList.add('modal_on');
+    modal[index].style.display = "block";
+  }
+  // 모달콘텐츠 클로즈
+  function modalClose() {
+    index = this.num;
+    body.classList.remove('modal_on');
+    modal[index].style.display = "none";
   }
 
 })(this);

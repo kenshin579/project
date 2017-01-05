@@ -369,36 +369,6 @@ a {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
-}/* reset */body {
-  font-family: "Lato", sans-serif;
-}
-
-h1,h2,h3,h4,h5,h6,p,figure {
-  margin: 0;
-  padding: 0;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  font-family: "Oswald", sans-serif;
-}
-
-h1 {
-  line-height: 1.5;
-}
-
-h3 {
-  text-align: center;
-  font-size: 30px;
-  line-height: 1.6;
-}
-
-img {
-  width: 100%;
-  vertical-align: bottom;
-}
-
-p {
-  color: #444;
 }
 
 .header_wrap,.title_txt,.chicken_wrap,.stories_wrap,.inquire_wrapping {
@@ -448,7 +418,37 @@ p {
  * ----------------------------------
  * mixin + media query : 모바일 기준 -> 태블릿 -> 데스크탑
  * ----------------------------------
- *//**
+ *//* reset */body {
+  font-family: "Lato", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p,figure {
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  line-height: 1.5;
+}
+
+h3 {
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+p {
+  color: #444;
+}/**
  * ------------------------------------
  *  skip : 본문바로가기 , 맨위로 버튼 , 배경음악 재생 정지 버튼
  * -----------------------------------
@@ -1813,6 +1813,10 @@ p {
 
   .unit-l-12-12 {
     width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 
   .header_wrap {

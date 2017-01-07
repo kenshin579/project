@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>추천 친구 - AJAX</title>
+    <!-- font-awsesome CDN -->
+    <script src="https://use.fontawesome.com/6da4249385.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+    <div class="header clearfix">
+      <h1 class="logo"><span class="fa fa-users"></span> | friend</h1>
+      <div class="head_right">
+        <h2>오늘의 추천 친구</h2>
+        <button type="button" class="call-ajax-data call_btn fa fa-user-plus fa-2x"><span class="readable-hidden">추천</span></button>
+      </div>
+    </div>
+
+    <main>
+      <div class="my_profile clearfix">
+        <h3 class="my_name">SSEOM <span>/ Sunmi Yun</span></h3>
+        <h4 class="readable-hidden">my profile image</h4>
+        <p class="my_picture">
+          <img src="my-pic.jpg" alt="img">
+        </p>
+        <div class="info_txt">
+          <h4 class="readable-hidden">Mail</h4>
+          <p>ysum1011@naver.com</p>
+          <h4 class="readable-hidden">Feel now</h4>
+          <p>
+            Hi~ Lorem ipsum dolor sit amet.<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, reprehenderit.
+          </p>
+        </div>
+      </div>
+
+      <div class="view_btn_wrap">
+        <button type="button" class="th_btn fa fa-th fa-2x"></button>
+        <button type="button" class="list_btn fa fa-list-ul fa-2x"></button>
+      </div>
+
+      <h2 class="f_title">Friend List</h2>
+      <div class="friend_list_view">
+        <p class="view_info">
+          오른쪽 상단에 오늘의 추천 친구 버튼을 클릭 하시면 추천 친구들이 나옵니다.
+        </p>
+      </div>
+
+    </main>
+
+    <!-- JSON 통신 -->
+    <script src="ajax-json.js"></script>
+    <!-- 데이더 : https://randomuser.me/documentation#howto -->
+  </body>
+</html>

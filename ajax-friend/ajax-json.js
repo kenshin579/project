@@ -1,5 +1,6 @@
 (function(global, XHR){
   'use strict';
+
   //사용자 함수
   var createXHR = (function(){
     XHR = XHR || ActiveXObject('Microsoft.XMLHTTP');
@@ -13,9 +14,11 @@
 
   var result_view = document.querySelector('.friend_list_view');
   var call_ajax_btn = document.querySelector('.call_btn');
+  var th_btn = document.querySelector('.th_btn');
+  var list_btn = document.querySelector('.list_btn');
 
   // 비동기 통신
-  xhr.open('GET', 'https://randomuser.me/api/?results=10&nat=gb,br'); 
+  xhr.open('GET', 'https://randomuser.me/api/?results=10&nat=gb,br');
 
   xhr.setRequestHeader( 'Access-Control-Allow-Headers', '*' );
   xhr.setRequestHeader( 'X-Custom-Header', 'pingpong' ); 
@@ -42,7 +45,8 @@
 
       var people = random_users.results;
 
-      var template = '<ul>';
+      var template;
+      template = '<ul>';
       // people 반복 순환 처리
       for ( var person of people ) {
         person.fullname = `${person.name.first} ${person.name.last}`;
@@ -63,18 +67,48 @@
       template += '</ul>';
     }
     // console.log(xhr);
-  result_view.innerHTML = template;
-}
+    result_view.innerHTML = template;
+
+    // 초기 리스트 정렬 저장
+    var start = result_view.innerHTML;
+
+    // 썸네일 버튼
+    th_btn.onclick = function(){
+
+      th_btn.classList.add('on');
+      list_btn.classList.remove('on');
+
+      // console.log(template);
+      template = '<ul class="thumbnail_wrap">';
+        // people 반복 순환 처리
+        for ( var person of people ) {
+          template += '<li class="thumbnail">';
+          template += '<div class="">';
+          template += '<p class=""><img src=" ' + person.picture.large + ' "alt="img"></p>';
+          template += '</div>';
+          template += '</li>';
+        }
+        template += '</ul>';
+
+        result_view.innerHTML = template;
+    };
+
+    // 리스트 버튼
+    list_btn.onclick =  function(){
+      th_btn.classList.remove('on');
+      list_btn.classList.add('on');
+      result_view.innerHTML = start;
+    };
+
+  }
 
 
   function updateViewPlace() {
     // AJAX 통신 요청 보내기
     xhr.send();
-
     this.onclick = null;
     this.setAttribute('disabled', 'disabled');
   }
-
 
 
 })(this, this.XMLHttpRequest);

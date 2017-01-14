@@ -95,6 +95,7 @@ button{
   left: 300px;
   top: -20px;
   font-size: 50px;
+  line-height: 0.7;
 }
 .my_name > span{
   font-size: 25px;
@@ -168,7 +169,6 @@ button{
   margin-bottom: 0;
 }
 
-
 .f_picture{
   position: absolute;
   left: 0px;
@@ -188,6 +188,25 @@ button{
 }
 
 
+
+/* thumbnail */
+.thumbnail_wrap{
+  width: 100%;
+  text-align: center;
+  /*border: 1px solid red;*/
+}
+
+.thumbnail{
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.th_btn.on{
+  color: #fff;
+}
+.list_btn.on{
+  color: #fff;
+}
 
 
 

@@ -744,6 +744,19 @@ p {
   cursor: pointer;
 }
 
+.stories_content_wrap:hover .img_wrap img,.stories_content_wrap:focus .img_wrap img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.stories_content_wrap:hover .stories_txt h4,.stories_content_wrap:focus .stories_txt h4 {
+  color: #6b6c6c;
+}
+
+.stories_content_wrap:hover .stories_txt p,.stories_content_wrap:focus .stories_txt p {
+  color: #6b6c6c;
+}
+
 .view_btn {
   float: left;
 }

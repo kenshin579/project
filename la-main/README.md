@@ -1,7 +1,7 @@
 ##La-Main 작업일지
 
 ###사용언어 및 툴
-- HTML5, CSS3, Sass, JavaScript, jQuery, Gulp
+- HTML5, CSS3, Sass, JavaScript, jQuery, [Gulp](https://github.com/sseom/learning/blob/master/06_Gulp/02_sass-gulp-module.md)
 
 ###사용기술
 - 반응형 웹 (RWD) : 모바일, 태블릿, 데스크탑 3가지 버전 (모바일 기준)

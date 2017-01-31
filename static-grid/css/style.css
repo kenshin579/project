@@ -516,7 +516,7 @@ img {
   box-sizing: border-box;
 }
 
-/* 비디오 콘텐츠 */
+/* 비디오 콘텐츠 : iframe */
 iframe{
   border: none;
 }
@@ -539,6 +539,14 @@ iframe{
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* 비디오 콘텐츠 : video 요소 사용 */
+.rwd-video{
+  width: 100%;
+  /* 컨텐츠 안에 들어가 있는거니까 너비에 비례해서 높이값은 자동으로! */
+  height: auto;
+  margin-top: -6px;
 }
 
 /* 이미지 콘텐츠 */

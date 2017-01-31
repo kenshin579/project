@@ -57,13 +57,21 @@
     <!-- 메인 -->
     <main class="grid">
 
-      <!-- 비디오 콘텐츠 -->
-      <section class="slider_wrap">
+      <!-- 비디오 콘텐츠 : iframe 방식 -->
+<!--       <section class="slider_wrap">
         <h2 class="hidden_text">비디오 슬라이드</h2>
         <div class="embed-container">
           <iframe src="https://www.youtube.com/embed//zTiMeJrdJnQ" allowfullscreen></iframe>
         </div>
       </section>
+ -->
+      <!-- 비디오 콘텐츠 : video요소 사용 -->
+      <section class="video_wrap">
+        <h2 class="hidden_text">비디오 슬라이드</h2>
+          <video class="rwd-video" poster="media/india-poster.png" width="560"  height="315"  src="media/india-AD.mp4" controls>
+          </video>
+      </section>
+
       
       <!-- 이미지 콘텐츠 묶음 -->
       <div class="con_wrapping">

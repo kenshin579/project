@@ -19,6 +19,7 @@
         var mapProp = {
           center:new google.maps.LatLng(37.572839, 126.985184),
           zoom: 15,
+          scrollwheel : false, //마우스 휠로 확대 축소 사용 여부
           mapTypeId:google.maps.MapTypeId.ROADMAP
         };
         var map=new google.maps.Map(document.getElementById("map_box"),mapProp);

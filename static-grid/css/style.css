@@ -493,7 +493,7 @@ img {
 
 .gnb li {
   float: left;
-  margin-right: 48px;
+  margin-right: 45px;
 }
 
 .gnb li:last-child {
@@ -546,7 +546,7 @@ iframe{
   width: 100%;
   /* 컨텐츠 안에 들어가 있는거니까 너비에 비례해서 높이값은 자동으로! */
   height: auto;
-  margin-top: -6px;
+  margin-top: -8px;
 }
 
 /* 이미지 콘텐츠 */

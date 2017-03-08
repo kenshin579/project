@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>이미지슬라이드</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <h1 class="headline">Image Slide Type <a class="link" href="#" target="_blank">작업 코드 보기</a></h1>
+
+    <!-- basic -->
+    <div class="basic">
+      <h2>Basic <span class="sub-head">정적인 이미지 슬라이드</span></h2>
+      <div class="basic-carousel">
+        <ul class="imgs-containner" >
+          <li class="img-list img1">1번</li>
+          <li class="img-list img2">2번</li>
+          <li class="img-list img3">3번</li>
+          <li class="img-list img4">4번</li>
+        </ul>
+      </div>
+      <!-- 버튼 -->
+      <div class="btn-wrap">
+        <button type="button" class="prev-btn0"> &lt; </button>
+        <button type="button" class="next-btn0"> &gt; </button>
+      </div>
+    </div>
+    <script>
+
+      (function(global){
+        'use strict';
+        var carousel_view = document.querySelector('.basic-carousel');
+        var imgs_wrap = carousel_view.querySelector('.imgs-containner');
+        var img_list = imgs_wrap.querySelectorAll('.img-list');
+        var img_width = imgs_wrap.querySelectorAll('.img-list')[0].clientWidth;
+        var img_num = img_list.length;
+        var prev_btn = document.querySelector('.prev-btn0');
+        var next_btn = document.querySelector('.next-btn0');
+        var index = 0;
+
+        imgs_wrap.style.width = (carousel_view.clientWidth * img_num) +'px';
+
+        next_btn.onclick = function(){
+          index++;
+          if(index > img_num-1){ index = 0; }
+          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * index ) +'px, 0px)';
+        };
+
+        prev_btn.onclick = function(){
+          index--;
+          if(index < 0){ index = img_num-1; }
+          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * index ) +'px, 0px)';
+        };
+
+      })(this);
+
+    </script>
+
+
+    <!-- sliding -->
+    <div class="sliding">
+      <h2>Sliding <span class="sub-head">부드럽게 이미지 슬라이딩</span></h2>
+      <div class="sliding-carousel">
+        <ul class="imgs-containner" >
+          <li class="img-list img1">1번</li>
+          <li class="img-list img2">2번</li>
+          <li class="img-list img3">3번</li>
+          <li class="img-list img4">4번</li>
+        </ul>
+      </div>
+      <!-- 버튼 -->
+      <div class="btn-wrap">
+        <button type="button" class="prev-btn1"> &lt; </button>
+        <button type="button" class="next-btn1"> &gt; </button>
+      </div>
+    </div>
+
+    <script>
+      (function(global){
+        'use strict';
+
+        var carousel_view = document.querySelector('.sliding-carousel');
+        var imgs_wrap = carousel_view.querySelector('.imgs-containner');
+        var img_list = imgs_wrap.querySelectorAll('.img-list');
+        var img_width = imgs_wrap.querySelectorAll('.img-list')[0].clientWidth;
+        var img_num = img_list.length;
+        var prev_btn = document.querySelector('.prev-btn1');
+        var next_btn = document.querySelector('.next-btn1');
+        var index = 0;
+
+        imgs_wrap.style.width = (carousel_view.clientWidth * img_num) +'px';
+
+        next_btn.onclick = function(){
+          index++;
+          if(index > img_num-1){ index = 0; }
+          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * index ) +'px, 0px)';
+        };
+
+        prev_btn.onclick = function(){
+          index--;
+          if(index < 0){ index = img_num-1; }
+          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * index ) +'px, 0px)';
+        };
+      })(this);
+
+    </script>
+
+    <!-- infinit sliding version 1 -->
+    <div class="infinit">
+      <h2>Infinit Sliding - v.1 <span class="sub-head">이미지 위치값 조정 : 이미지 무한 슬라이딩</span></h2>
+      <div class="infinit-carousel">
+        <ul class="imgs-containner" >
+          <li class="img-list img1">1번</li>
+          <li class="img-list img2">2번</li>
+          <li class="img-list img3">3번</li>
+          <li class="img-list img4">4번</li>
+        </ul>
+      </div>
+      <!-- 버튼 -->
+      <div class="btn-wrap">
+        <button type="button" class="prev-btn2"> &lt; </button>
+        <button type="button" class="next-btn2"> &gt; </button>
+      </div>
+    </div>
+
+    <script>
+
+      (function(global){
+        'use strict';
+
+        var carousel_view = document.querySelector('.infinit-carousel');
+        var imgs_wrap = carousel_view.querySelector('.imgs-containner');
+        var img_list = imgs_wrap.querySelectorAll('.img-list');
+        var img_width = imgs_wrap.querySelectorAll('.img-list')[0].clientWidth;
+        var img_num = imgs_wrap.querySelectorAll('.img-list').length;
+        var prev_btn = document.querySelector('.prev-btn2');
+        var next_btn = document.querySelector('.next-btn2');
+        var index = 0;
+
+        //초기값
+        showImage(index);
+
+        next_btn.onclick = function(){
+          index++;
+          if(index > img_num-1){ index = 0; }
+          showImage(index);
+        };
+
+        prev_btn.onclick = function(){
+          index--;
+          if(index < 0){ index = img_num-1; }
+          showImage(index);
+        };
+
+
+        function showImage(n) {
+          // 이미지들 순환 : display:none; 작업
+          // 보여질 이미지를 제외한 나머지 이미지들 안보이게 하려고 모든 이미지 none
+          // 왜? 우선순위상 뒤에 있는 이미지들이 위로 올라오니까(보여지는 부분에 있어서)
+          for(var i = 0; i < img_num ;i++){
+            img_list[i].style.display = 'none';
+          }
+
+          // 지금 보여지는 이미지
+          var image_now = index;
+          // 이전 이미지
+          var image_prev = index <= 0 ? img_num - 1 : index - 1;
+          // 다음 이미지
+          var image_next = index >= img_num - 1 ? 0 : index + 1;
+
+          // 지금 보여지는 이미지 배치 후 display:block;
+          img_list[image_now].style.cssText = 'transform: translate(0px, 0px); display: block;';
+          // 이전이미지 배치 후 display:block;
+          img_list[image_prev].style.cssText =  'transform: translate(-'+ img_width +'px, 0px); display: block;';
+          // 다음이미지 배치 후 display:block;
+          img_list[image_next].style.cssText =  'transform: translate('+ img_width +'px, 0px); display: block;';
+
+        }
+
+      })(this);
+    </script>
+
+
+    <!-- infinit sliding version 2-->
+    <div class="infinit">
+      <h2>Infinit Sliding - v.2<span class="sub-head">이미지 붙여 넣는 방식 : 이미지 무한 슬라이딩</span></h2>
+      <div class="infinit-carousel-2">
+        <ul class="imgs-containner" >
+          <li class="img-list img1">1번</li>
+          <li class="img-list img2">2번</li>
+          <li class="img-list img3">3번</li>
+          <li class="img-list img4">4번</li>
+        </ul>
+      </div>
+      <!-- 버튼 -->
+      <div class="btn-wrap">
+        <button type="button" class="prev-btn3"> &lt; </button>
+        <button type="button" class="next-btn3"> &gt; </button>
+      </div>
+    </div>
+
+    <script>
+      (function(global){
+        'use strict';
+
+        var carousel_view = document.querySelector('.infinit-carousel-2');
+        var imgs_wrap = carousel_view.querySelector('.imgs-containner');
+        var img_list = imgs_wrap.querySelectorAll('.img-list');
+        var img_width = imgs_wrap.querySelectorAll('.img-list')[0].clientWidth;
+        var img_num = img_list.length;
+        var prev_btn = document.querySelector('.prev-btn3');
+        var next_btn = document.querySelector('.next-btn3');
+        var index = 0;
+
+        imgs_wrap.style.width = (carousel_view.clientWidth * img_num) +'px';
+
+        next_btn.onclick = nextMove;
+        prev_btn.onclick = prevMove;
+
+        function prevMove(){
+          // 마지막 이미지 복사
+          var cloneImg = imgs_wrap.children[img_num-1].cloneNode(true);
+          // 맨 마지막 이미지 삭제
+          imgs_wrap.removeChild(imgs_wrap.children[img_num-1]);
+          // 첫번째에 붙여넣고
+          imgs_wrap.insertBefore(cloneImg, imgs_wrap.children[0]);
+
+          // 이미지 랩 트렌지션 없이 이동
+          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 1 ) +'px, 0px)';
+          imgs_wrap.style.transition = 'transform 0.0s ease-in-out';
+          setTimeout(prevImg,200);
+        }
+
+        function nextMove(){
+          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 1 ) +'px, 0px)';
+          imgs_wrap.style.transition = 'transform 0.5s ease-in-out';
+          setTimeout(nextImg,500);
+        }
+
+        function nextImg(){
+          // 첫번째 이미지 복사
+          var cloneImg = imgs_wrap.children[0].cloneNode(true);
+          // 마지막에 붙여넣고
+          imgs_wrap.appendChild(cloneImg);
+          // 맨 처음 이미지는 삭제
+          imgs_wrap.removeChild(imgs_wrap.children[0]);
+
+          // 이미지 랩 제자리로 배치 : 트렌지션 없이 이동
+          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 0 ) +'px, 0px)';
+          imgs_wrap.style.transition = 'transform 0.0s ease-in-out';
+        }
+
+        function prevImg(){
+          // 이미지 랩 제자리로 배치
+          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 0 ) +'px, 0px)';
+          imgs_wrap.style.transition = 'transform 0.5s ease-in-out';
+        }
+
+      })(this);
+
+    </script>
+
+
+  </body>
+</html>

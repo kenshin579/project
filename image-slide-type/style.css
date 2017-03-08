@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #F9D2C2;
+}
+.headline{
+  margin: 0 0 50px 0;
+  padding: 60px 0;
+  background-color: #324959;
+  color: #fff;
+  text-align: center;
+  font-size: 38px;
+}
+.link{
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: lighter;
+  text-decoration: none;
+  color: #fff;
+}
+.link:hover{
+  border-bottom: 1px solid #fff;
+}
+
+ul{ list-style: none; margin: 0; padding: 0;}
+
+.basic, .sliding, .infinit{
+  position: relative;
+  padding: 30px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  border-bottom: 2px solid #4B6F8C;
+  border-right: 2px solid #4B6F8C;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.basic h2, .sliding h2, .infinit h2{
+  margin-top: 10px;
+  margin-bottom: 50px;
+  color: #314859;
+}
+.sub-head{
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.basic-carousel, .sliding-carousel, .infinit-carousel, .infinit-carousel-2 {
+    overflow: hidden;
+    position: relative;
+    margin: 30px auto;
+    width: 100px;
+    outline: 10px solid #314859;
+}
+
+.imgs-containner{
+  outline: 3px solid #000;
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+}
+
+.basic-carousel > .imgs-containner,
+.sliding-carousel > .imgs-containner{
+  transform: translate(0px, 0px); 
+}
+
+.sliding-carousel > .imgs-containner{
+  transition: transform 0.5s ease-in-out;
+}
+
+.img-list{
+  position: relative;
+  float: left;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+/*infinit 1*/
+.infinit-carousel{  height: 100px;  }
+
+.infinit-carousel > .imgs-containner{
+  position: relative;
+}
+
+.infinit-carousel > .imgs-containner > .img-list{
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img1{background-color: #FFCC66;}
+.img2{background-color: #CCFF66;}
+.img3{background-color: #66FFCC;}
+.img4{background-color: #66CCFF;}
+
+.btn-wrap{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  transform: translate(-50%);
+}
+[class^="prev-"], [class^="next-"]{
+  margin: 0 5px;
+  border: none;
+  border-radius: 50%;
+  color: #314859;
+  background-color: #D5E2DC;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+[class^="prev-"]{
+  padding: 7px 17px 13px 15px;
+  float: left;
+}
+[class^="next-"]{
+  padding: 7px 15px 13px 17px;
+  float: right;
+}
+[class^="prev-"]:hover, [class^="next-"]:hover{
+  background-color: #959E9D;
+}

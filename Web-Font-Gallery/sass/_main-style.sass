@@ -1,0 +1,236 @@
+$main-color: #26595D
+
+body
+  background-color: #FEECC8
+a
+  @extend %reset-link
+ul, ol
+  @extend %reset-list
+h1,h2,h3,h4,h5,h6
+  @extend %reset-space
+
+.wrapping
+  border: 2px solid $main-color
+  border-radius: 15px
+  max-width: 80%
+  min-width: 910px
+  margin-left: auto
+  margin-right: auto
+  margin-top: 50px
+  padding: 20px
+  color: #474E51
+  background-color: #FFFDE8
+  
+
+.head
+  position: relative
+  border-bottom: 1px solid #5D666C
+  padding-bottom: 10px
+
+
+.sort-list
+  position: absolute
+  right: 0
+  top: 0
+  font-size: 14px
+  > li
+    border-right: 1px solid #5D666C
+    display: inline
+    padding: 0 10px
+    &:last-child
+      border-right: none
+    a:hover, a:focus
+      border-bottom: 1px solid #F4671C
+  .select-sort
+    color: #F4671C
+
+
+.font-content
+  @extend %clearfix
+.font-list
+  border-top: 1px solid $main-color
+  border-left: 1px solid $main-color
+  border-right: 2px solid shade($main-color, 60%)
+  border-bottom: 3px solid shade($main-color, 60%)
+  border-radius: 15px
+  background-color: #fff
+  box-sizing: border-box
+  max-width: 30%
+  margin: 15px
+  height: 300px
+  float: left
+  position: relative
+
+.font-name
+  padding: 0 20px
+  position: absolute
+  left: 0
+  bottom: 70px
+
+.font-1
+  font-family: $font_1
+.font-2
+  font-family: $font_2
+.font-3
+  font-family: $font_3
+.font-4
+  font-family: $font_4
+.font-5
+  font-family: $font_5
+.font-6
+  font-family: $font_6
+
+.view-wrap
+  font-size: 18px
+  width: 100%
+  line-height: 1.2
+  height: 150px
+  padding: 20px 20px 0 20px
+  box-sizing: border-box
+
+
+.view-btn-wrap
+  background-color: $main-color
+  padding: 14px 10px
+  text-align: right
+  margin-top: 67px
+  border-bottom-left-radius: 11px
+  border-bottom-right-radius: 11px
+  label
+    @extend %readable-hidden
+  .detail-view-btn
+    background-color: #95947C
+    color: #fff
+    border: none
+    padding: 10px 40px
+    margin-right: 10px
+    cursor: pointer
+    &:hover, &:focus
+      background-color: shade(#95947C, 50%)
+
+//----------------------------------------------
+
+.modal-wrap 
+  display: none
+  position: fixed
+  z-index: 9
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  background-color: rgb(53,49,42)
+  background-color: rgba(0,0,0,0.8)
+  &.modal-on
+    display: block
+
+
+.modal-content
+  background-color: shade($main-color, 30%)
+  color: #fff
+  max-width: 350px
+  padding: 20px 30px
+  margin: 100px auto
+  position: relative
+
+.modal-font-name
+  margin: 30px 0
+
+.modal-view-wrap
+  color: #474E51
+  background-color: #fff
+  padding: 20px 20px 0 20px
+  margin: 0
+  height: 200px
+  overflow: hidden
+  font-size: 18px
+
+.close-btn-wrap
+  label
+    @extend %readable-hidden
+  .detail-close-btn
+    position: absolute
+    top: 3%
+    right: 3%
+    cursor: pointer
+    border: none
+    background-color: #fff
+    &:hover, &:focus
+      background-color: $main-color
+
+.font-control
+  @extend %clearfix
+  margin: 40px 0
+  position: relative
+
+.font-size, .font-color
+  float: left
+  width: 50%
+
+.font-color
+  position: relative
+
+.control-title
+  padding-bottom: 20px
+
+.handring-icon
+  +size(15px)
+  background-color: #fff
+  border-radius: 50%
+  position: absolute
+  left: 0
+  bottom: 0px
+  cursor: pointer
+  border: 5px solid transparent
+  &:focus
+    border: 5px solid shade($main-color, 50%)
+  &:active
+    border: 5px solid shade($main-color, 80%)
+.area-line
+  width: 80%
+  height: 20px
+  margin-top: 17px
+  &:after
+    content: ''
+    display: block
+    border-bottom: 1px solid #fff
+    padding-top: 7px
+
+.readable-hidden
+  @extend %readable-hidden
+
+.color-btn
+  padding: 10px 0
+  width: 130px
+  background-color: #fff
+  border: none
+  cursor: pointer
+  border-radius: 25px
+  &:hover, &:focus
+    background-color: $main-color
+  &:active
+    background-color: shade($main-color, 80%)
+
+.color-table-wrap
+  background-color: #fff
+  position: absolute
+  left: 0
+  top: 120%
+  z-index: 99
+  +size(260px, auto)
+  display: none
+  &.pick-open
+    display: block
+  > .color-table
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+  .color-ol
+    > li
+      +size(20px)
+      display: inline-block
+      cursor: pointer
+      span
+        @extend %readable-hidden
+

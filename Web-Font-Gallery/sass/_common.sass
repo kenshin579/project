@@ -1,0 +1,39 @@
+// 클리어픽스(Clearfix) 모듈 + ie8 대응 (zoom) 
+%clearfix
+  &:before,
+  &:after
+    content: ''
+    display: table
+  &:after
+    clear: both
+  .lt-ie8 &
+    zoom: 1
+
+
+// 공간 초기화 : reset-box-model
+%reset-space
+  outline: 0
+  margin: 0
+  border: 0
+  padding: 0
+
+// 목록 초기화
+%reset-list
+  list-style: none
+  padding-left: 0
+
+// 하이퍼링크 초기화
+%reset-link
+  text-decoration: none
+  color: inherit
+
+// 숨김 글자 : a11y-hidden 이라 고도 한다.
+%readable-hidden
+  overflow: hidden
+  position: absolute
+  width:    1px
+  height:   1px
+  margin:   -1px
+  border:   0
+  padding:  0
+

@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko-KR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" >
+    <title>웹폰트 갤러리 | 온오프믹스 과제 | 윤선미</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" >
+    <!-- jquery CDN -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapping">
+      <div class="head">
+        <h1 class="main-title">웹폰트</h1>
+        <ul class="sort-list">
+          <li><a class="select-sort" href="#">인기순</a></li>
+          <li><a href="#">최근순</a></li>
+          <li><a href="#">가나다순</a></li>
+        </ul>
+      </div>
+      <div class="main-wrap">
+        <ul class="font-content">
+          <li class="font-list">
+            <div class="font-article">
+              <h2 class="font-name">Dosis</h2>
+              <p class="view-wrap font-1" lang="en">
+                A B C D E F G H I J K L M N O P K R S T U W X Y Z a b c d e f g h i j k l m n o p k r s t u w x y z
+              </p>
+              <div class="view-btn-wrap">
+                <label for="view-btn-1">CLICK</label>
+                <input type="button" id="view-btn-1" class="detail-view-btn" name="view-btn-1" value="CLICK" >
+              </div>
+            </div>
+          </li>
+
+          <li class="font-list">
+            <div class="font-article">
+              <h2 class="font-name">Griffy</h2>
+              <p class="view-wrap font-2" lang="en">
+                A B C D E F G H I J K L M N O P K R S T U W X Y Z a b c d e f g h i j k l m n o p k r s t u w x y z
+              </p>
+              <div class="view-btn-wrap">
+                <label for="view-btn-2">CLICK</label>
+                <input type="button" id="view-btn-2" class="detail-view-btn" name="view-btn-2" value="CLICK" >
+              </div>
+            </div>
+          </li>
+
+          <li class="font-list">
+            <div class="font-article">
+              <h2 class="font-name">Lemonada</h2>
+              <p class="view-wrap font-3" lang="en">
+                A B C D E F G H I J K L M N O P K R S T U W X Y Z a b c d e f g h i j k l m n o p k r s t u w x y z
+              </p>
+              <div class="view-btn-wrap">
+                <label for="view-btn-3">CLICK</label>
+                <input type="button" id="view-btn-3" class="detail-view-btn" name="view-btn-3" value="CLICK" >
+              </div>
+            </div>
+          </li>
+
+          <li class="font-list">
+            <div class="font-article">
+              <h2 class="font-name">Oswald</h2>
+              <p class="view-wrap font-4" lang="en">
+                A B C D E F G H I J K L M N O P K R S T U W X Y Z a b c d e f g h i j k l m n o p k r s t u w x y z
+              </p>
+              <div class="view-btn-wrap">
+                <label for="view-btn-4">CLICK</label>
+                <input type="button" id="view-btn-4" class="detail-view-btn" name="view-btn-4" value="CLICK" >
+              </div>
+            </div>
+          </li>
+
+          <li class="font-list">
+            <div class="font-article">
+              <h2 class="font-name">Roboto</h2>
+              <p class="view-wrap font-5" lang="en">
+                A B C D E F G H I J K L M N O P K R S T U W X Y Z a b c d e f g h i j k l m n o p k r s t u w x y z
+              </p>
+              <div class="view-btn-wrap">
+                <label for="view-btn-5">CLICK</label>
+                <input type="button" id="view-btn-5" class="detail-view-btn" name="view-btn-5" value="CLICK" >
+              </div>
+            </div>
+          </li>
+
+          <li class="font-list">
+            <div class="font-article">
+              <h2 class="font-name">Ranga</h2>
+              <p class="view-wrap font-6" lang="en">
+                A B C D E F G H I J K L M N O P K R S T U W X Y Z a b c d e f g h i j k l m n o p k r s t u w x y z
+              </p>
+              <div class="view-btn-wrap">
+                <label for="view-btn-6">CLICK</label>
+                <input type="button" id="view-btn-6" class="detail-view-btn" name="view-btn-6" value="CLICK" >
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- modal START -->
+        <div class="modal-wrap">
+          <div class="modal-content">
+            <div>
+              <h2 class="modal-font-name">Dosis</h2>
+              <p class="modal-view-wrap" lang="en">
+                A B C D E F G H I J K L M N O P K R S T U W X Y Z a b c d e f g h i j k l m n o p k r s t u w x y z
+              </p>
+              <div class="close-btn-wrap">
+                <label for="close-btn">CLOSE</label>
+                <input type="button" id="close-btn" class="detail-close-btn" name="close-btn" value="X" >
+              </div>
+            </div>
+            <div class="font-control">
+              <div class="font-size">
+                <h3 class="control-title">SIZE</h3>
+                <div class="bar-control">
+                  <div class="area-line">
+                    <span class="readable-hidden">사이즈 영역 라인</span>
+                  </div>
+                  <div class="handring-icon">
+                    <span class="readable-hidden">사이즈 컨트롤 핸들 아이콘</span>
+                  </div>
+                </div>
+              </div>
+              <div class="font-color">
+                <h3 class="control-title">COLOR</h3>
+                <input type="button" id="color-btn" class="color-btn" name="color-btn" value="PICK" >
+                <!-- color-table START  -->
+                <div class="color-table-wrap">
+                  <ul class="color-table">
+                    <li class="pick-color pick-gray">
+                      <ol class="color-ol">
+                        <li class="gray-01"><span>color gray-01</span></li>
+                        <li class="gray-02"><span>color gray-02</span></li>
+                        <li class="gray-03"><span>color gray-03</span></li>
+                        <li class="gray-04"><span>color gray-04</span></li>
+                        <li class="gray-05"><span>color gray-05</span></li>
+                        <li class="gray-06"><span>color gray-06</span></li>
+                        <li class="gray-07"><span>color gray-07</span></li>
+                        <li class="gray-08"><span>color gray-08</span></li>
+                        <li class="gray-09"><span>color gray-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-red">
+                      <ol class="color-ol">
+                        <li class="red-01"><span>color red-01</span></li>
+                        <li class="red-02"><span>color red-02</span></li>
+                        <li class="red-03"><span>color red-03</span></li>
+                        <li class="red-04"><span>color red-04</span></li>
+                        <li class="red-05"><span>color red-05</span></li>
+                        <li class="red-06"><span>color red-06</span></li>
+                        <li class="red-07"><span>color red-07</span></li>
+                        <li class="red-08"><span>color red-08</span></li>
+                        <li class="red-09"><span>color red-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-pink">
+                      <ol class="color-ol">
+                        <li class="pink-01"><span>color pink-01</span></li>
+                        <li class="pink-02"><span>color pink-02</span></li>
+                        <li class="pink-03"><span>color pink-03</span></li>
+                        <li class="pink-04"><span>color pink-04</span></li>
+                        <li class="pink-05"><span>color pink-05</span></li>
+                        <li class="pink-06"><span>color pink-06</span></li>
+                        <li class="pink-07"><span>color pink-07</span></li>
+                        <li class="pink-08"><span>color pink-08</span></li>
+                        <li class="pink-09"><span>color pink-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-grape">
+                      <ol class="color-ol">
+                        <li class="grape-01"><span>color grape-01</span></li>
+                        <li class="grape-02"><span>color grape-02</span></li>
+                        <li class="grape-03"><span>color grape-03</span></li>
+                        <li class="grape-04"><span>color grape-04</span></li>
+                        <li class="grape-05"><span>color grape-05</span></li>
+                        <li class="grape-06"><span>color grape-06</span></li>
+                        <li class="grape-07"><span>color grape-07</span></li>
+                        <li class="grape-08"><span>color grape-08</span></li>
+                        <li class="grape-09"><span>color grape-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-violet">
+                      <ol class="color-ol">
+                        <li class="violet-01"><span>color violet-01</span></li>
+                        <li class="violet-02"><span>color violet-02</span></li>
+                        <li class="violet-03"><span>color violet-03</span></li>
+                        <li class="violet-04"><span>color violet-04</span></li>
+                        <li class="violet-05"><span>color violet-05</span></li>
+                        <li class="violet-06"><span>color violet-06</span></li>
+                        <li class="violet-07"><span>color violet-07</span></li>
+                        <li class="violet-08"><span>color violet-08</span></li>
+                        <li class="violet-09"><span>color violet-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-indigo">
+                      <ol class="color-ol">
+                        <li class="indigo-01"><span>color indigo-01</span></li>
+                        <li class="indigo-02"><span>color indigo-02</span></li>
+                        <li class="indigo-03"><span>color indigo-03</span></li>
+                        <li class="indigo-04"><span>color indigo-04</span></li>
+                        <li class="indigo-05"><span>color indigo-05</span></li>
+                        <li class="indigo-06"><span>color indigo-06</span></li>
+                        <li class="indigo-07"><span>color indigo-07</span></li>
+                        <li class="indigo-08"><span>color indigo-08</span></li>
+                        <li class="indigo-09"><span>color indigo-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-blue">
+                      <ol class="color-ol">
+                        <li class="blue-01"><span>color blue-01</span></li>
+                        <li class="blue-02"><span>color blue-02</span></li>
+                        <li class="blue-03"><span>color blue-03</span></li>
+                        <li class="blue-04"><span>color blue-04</span></li>
+                        <li class="blue-05"><span>color blue-05</span></li>
+                        <li class="blue-06"><span>color blue-06</span></li>
+                        <li class="blue-07"><span>color blue-07</span></li>
+                        <li class="blue-08"><span>color blue-08</span></li>
+                        <li class="blue-09"><span>color blue-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-cyan">
+                      <ol class="color-ol">
+                        <li class="cyan-01"><span>color cyan-01</span></li>
+                        <li class="cyan-02"><span>color cyan-02</span></li>
+                        <li class="cyan-03"><span>color cyan-03</span></li>
+                        <li class="cyan-04"><span>color cyan-04</span></li>
+                        <li class="cyan-05"><span>color cyan-05</span></li>
+                        <li class="cyan-06"><span>color cyan-06</span></li>
+                        <li class="cyan-07"><span>color cyan-07</span></li>
+                        <li class="cyan-08"><span>color cyan-08</span></li>
+                        <li class="cyan-09"><span>color cyan-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-teal">
+                      <ol class="color-ol">
+                        <li class="teal-01"><span>color teal-01</span></li>
+                        <li class="teal-02"><span>color teal-02</span></li>
+                        <li class="teal-03"><span>color teal-03</span></li>
+                        <li class="teal-04"><span>color teal-04</span></li>
+                        <li class="teal-05"><span>color teal-05</span></li>
+                        <li class="teal-06"><span>color teal-06</span></li>
+                        <li class="teal-07"><span>color teal-07</span></li>
+                        <li class="teal-08"><span>color teal-08</span></li>
+                        <li class="teal-09"><span>color teal-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-green">
+                      <ol class="color-ol">
+                        <li class="cyan-01"><span>color green-01</span></li>
+                        <li class="green-02"><span>color green-02</span></li>
+                        <li class="green-03"><span>color green-03</span></li>
+                        <li class="green-04"><span>color green-04</span></li>
+                        <li class="green-05"><span>color green-05</span></li>
+                        <li class="green-06"><span>color green-06</span></li>
+                        <li class="green-07"><span>color green-07</span></li>
+                        <li class="green-08"><span>color green-08</span></li>
+                        <li class="green-09"><span>color green-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-lime">
+                      <ol class="color-ol">
+                        <li class="lime-01"><span>color lime-01</span></li>
+                        <li class="lime-02"><span>color lime-02</span></li>
+                        <li class="lime-03"><span>color lime-03</span></li>
+                        <li class="lime-04"><span>color lime-04</span></li>
+                        <li class="lime-05"><span>color lime-05</span></li>
+                        <li class="lime-06"><span>color lime-06</span></li>
+                        <li class="lime-07"><span>color lime-07</span></li>
+                        <li class="lime-08"><span>color lime-08</span></li>
+                        <li class="lime-09"><span>color lime-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-yellow">
+                      <ol class="color-ol">
+                        <li class="yellow-01"><span>color yellow-01</span></li>
+                        <li class="yellow-02"><span>color yellow-02</span></li>
+                        <li class="yellow-03"><span>color yellow-03</span></li>
+                        <li class="yellow-04"><span>color yellow-04</span></li>
+                        <li class="yellow-05"><span>color yellow-05</span></li>
+                        <li class="yellow-06"><span>color yellow-06</span></li>
+                        <li class="yellow-07"><span>color yellow-07</span></li>
+                        <li class="yellow-08"><span>color yellow-08</span></li>
+                        <li class="yellow-09"><span>color yellow-09</span></li>
+                      </ol>
+                    </li>
+                    <li class="pick-color pick-orange">
+                      <ol class="color-ol">
+                        <li class="orange-01"><span>color orange-01</span></li>
+                        <li class="orange-02"><span>color orange-02</span></li>
+                        <li class="orange-03"><span>color orange-03</span></li>
+                        <li class="orange-04"><span>color orange-04</span></li>
+                        <li class="orange-05"><span>color orange-05</span></li>
+                        <li class="orange-06"><span>color orange-06</span></li>
+                        <li class="orange-07"><span>color orange-07</span></li>
+                        <li class="orange-08"><span>color orange-08</span></li>
+                        <li class="orange-09"><span>color orange-09</span></li>
+                      </ol>
+                    </li>
+                  </ul>
+                </div>
+                <!-- color-table END  -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal END -->
+      </div>
+      <!-- main END -->
+    </div>
+    <!-- wrap END -->
+
+    <!-- script -->
+    <script type="text/javascript" src="js/all.js"></script>
+  </body>
+</html>

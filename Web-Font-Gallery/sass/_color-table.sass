@@ -1,0 +1,56 @@
+@import "open-color"
+
+// color-list:
+// gray, red, pink, grape, violet, indigo, blue, cyan, teal, green, lime, yellow, orange
+
+$oc-gray: gray
+$oc-red: red
+$oc-pink: pink
+$oc-grape: grape
+$oc-violet: violet
+$oc-indigo: indigo
+$oc-blue: blue
+$oc-cyan: cyan
+$oc-teal: teal
+$oc-green: green
+$oc-lime: lime
+$oc-yellow: yellow
+$oc-orange: orange
+$color_count: 9
+
+@for $num from 1 through $color_count
+  .#{$oc-gray}-0#{$num}
+    background-color: map-get($oc-gray-list, #{$num})
+  .#{$oc-red}-0#{$num}
+    background-color: map-get($oc-red-list, #{$num})
+  .#{$oc-pink}-0#{$num}
+    background-color: map-get($oc-pink-list, #{$num})
+  .#{$oc-grape}-0#{$num}
+    background-color: map-get($oc-grape-list, #{$num})
+  .#{$oc-violet}-0#{$num}
+    background-color: map-get($oc-violet-list, #{$num})
+  .#{$oc-indigo}-0#{$num}
+    background-color: map-get($oc-indigo-list, #{$num})
+  .#{$oc-blue}-0#{$num}
+    background-color: map-get($oc-blue-list, #{$num})
+  .#{$oc-cyan}-0#{$num}
+    background-color: map-get($oc-cyan-list, #{$num})
+  .#{$oc-teal}-0#{$num}
+    background-color: map-get($oc-teal-list, #{$num})
+  .#{$oc-green}-0#{$num}
+    background-color: map-get($oc-green-list, #{$num})
+  .#{$oc-lime}-0#{$num}
+    background-color: map-get($oc-lime-list, #{$num})
+  .#{$oc-yellow}-0#{$num}
+    background-color: map-get($oc-yellow-list, #{$num})
+  .#{$oc-orange}-0#{$num}
+    background-color: map-get($oc-orange-list, #{$num})
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+// Color 조정 함수
+@function shade($color, $amount)
+  @return mix($color, #000, $amount)
+
+// 레이아웃 믹스인
+=size($width, $height: $width)
+  width: $width
+  height: $height

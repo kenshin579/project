@@ -213,6 +213,7 @@
         var prev_btn = document.querySelector('.prev-btn3');
         var next_btn = document.querySelector('.next-btn3');
         var index = 0;
+        var target = true;
 
         imgs_wrap.style.width = (carousel_view.clientWidth * img_num) +'px';
 
@@ -220,6 +221,7 @@
         prev_btn.onclick = prevMove;
 
         function prevMove(){
+
           // 마지막 이미지 복사
           var cloneImg = imgs_wrap.children[img_num-1].cloneNode(true);
           // 맨 마지막 이미지 삭제
@@ -230,33 +232,41 @@
           // 이미지 랩 트렌지션 없이 이동
           imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 1 ) +'px, 0px)';
           imgs_wrap.style.transition = 'transform 0.0s ease-in-out';
-          setTimeout(prevImg,200);
+
+          target = false;
+          setTimeout(infiniteImg,200);
+
         }
 
         function nextMove(){
           imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 1 ) +'px, 0px)';
           imgs_wrap.style.transition = 'transform 0.5s ease-in-out';
-          setTimeout(nextImg,500);
+
+          target = true;
+          setTimeout(infiniteImg,500);
         }
 
-        function nextImg(){
-          // 첫번째 이미지 복사
-          var cloneImg = imgs_wrap.children[0].cloneNode(true);
-          // 마지막에 붙여넣고
-          imgs_wrap.appendChild(cloneImg);
-          // 맨 처음 이미지는 삭제
-          imgs_wrap.removeChild(imgs_wrap.children[0]);
+        // 무한 이미지 :  target이란 상태변수를 이용해서 다음버튼인지 이전버튼인지 조건체크
+        function infiniteImg(){
+          // console.log(target);
+          if( target ){
+            // 첫번째 이미지 복사
+            var cloneImg = imgs_wrap.children[0].cloneNode(true);
+            // 마지막에 붙여넣고
+            imgs_wrap.appendChild(cloneImg);
+            // 맨 처음 이미지는 삭제
+            imgs_wrap.removeChild(imgs_wrap.children[0]);
 
-          // 이미지 랩 제자리로 배치 : 트렌지션 없이 이동
-          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 0 ) +'px, 0px)';
-          imgs_wrap.style.transition = 'transform 0.0s ease-in-out';
+            // 이미지 랩 제자리로 배치 : 트렌지션 없이 이동
+            imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 0 ) +'px, 0px)';
+            imgs_wrap.style.transition = 'transform 0.0s ease-in-out';
+          }else{
+            // 이미지 랩 제자리로 배치
+            imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 0 ) +'px, 0px)';
+            imgs_wrap.style.transition = 'transform 0.5s ease-in-out';
+          }
         }
 
-        function prevImg(){
-          // 이미지 랩 제자리로 배치
-          imgs_wrap.style.transform = 'translate( '+ -1 * ( img_width * 0 ) +'px, 0px)';
-          imgs_wrap.style.transition = 'transform 0.5s ease-in-out';
-        }
 
       })(this);
 

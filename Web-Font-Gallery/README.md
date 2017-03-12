@@ -7,6 +7,7 @@
 - Portfolio Blog : http://sseom.github.io/
 
 ### 개발환경
+- 운영체제 : MAC OS
 - HTML4(Transitional), CSS, CSS3, Sass, Javascript, jQuery
 - CDN 로드 : google Web Font, jQuery v1.12.4
 - Build Tool
@@ -67,7 +68,7 @@
     - X 버튼
         + 모달창 클로즈.
         + 컬러칩 클로즈.
-        + 핸들아이콘, 폰트 뷰에서의 폰트의 크기 디폴트값으로 돌아감.
+        + 핸들아이콘, 폰트 뷰에서의 폰트의 크기, 컬러 디폴트값으로 돌아감.
 
 ###Sass사용
 - _color-table.sass

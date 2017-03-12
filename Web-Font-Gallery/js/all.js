@@ -67,8 +67,8 @@
     $(modal_view_wrap).css('fontSize', size_value);
 
     // 폰트 컬러 기본값으로 변경
-    var origin_color = $(first_view_wrap).css('color');
-    modal_view_wrap.style.color = origin_color;
+    var $origin_color = $(first_view_wrap).css('color');
+    modal_view_wrap.style.color = $origin_color;
   };
 
 // ---------------[ FONT SIZE ]------------------
@@ -81,12 +81,12 @@
   // 아이콘 초기값 위치
   // 0. 원래 폰트사이즈 나올때의 위치값 알아내기
   // 1. 우선 폰트사이즈를 가져와 얼마인지
-  var size = $(modal_view_wrap).css('fontSize');
+  var $size = $(modal_view_wrap).css('fontSize');
   // 1-1. 숫자만 가져오기 : 단위제거 , 숫자로 형변환
   // moveSize() 함수 계산식 참고 
   // (원래폰트값 - 최소폰트값) * 분리되는단위 
-  size = (size.replace(/[^0-9]/g, '')) * 1;
-  var icon_location = (( size - 5 ) * 2 );
+  $size = ($size.replace(/[^0-9]/g, '')) * 1;
+  var icon_location = (( $size - 5 ) * 2 );
   // 2. 핸들의 위치를 조정해보자 : offset 절대좌표
   $(handring_icon).offset({left : icon_location});
 

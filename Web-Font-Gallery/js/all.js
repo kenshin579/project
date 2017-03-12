@@ -57,8 +57,11 @@
     removeClass(modal_view_wrap, "font-" + change_class);
     document.body.style.overflow = 'auto';
 
-    // 컬러 픽 닫힘 
+    // 컬러 칩 닫힘 
     removeClass(color_table_wrap, "pick-open");
+    // 컬러 칩 버튼 텍스트 PICK으로(기본) 변경
+    btn_val = "PICK";
+    color_btn.value = btn_val;
 
     // 핸들아이콘은 기본위치로
     $(handring_icon).offset({left : icon_location});
@@ -145,12 +148,12 @@
   var color_btn        = document.querySelector('.color-btn'),
       color_table_wrap = document.querySelector('.color-table-wrap'),
       color_table      = document.querySelector('.color-table'),
-      color_ol         = color_table.querySelectorAll('.color-ol');
-
+      color_ol         = color_table.querySelectorAll('.color-ol'),
+      btn_val          = color_btn.value;
 
   color_btn.onclick = function(){
-    var btn_val   = "CLOSE",
-        btn_state = this.value.indexOf('CLOSE') > -1;
+    btn_val   = "CLOSE";
+    var btn_state = this.value.indexOf('CLOSE') > -1;
 
     // false(-1 나오면) 라면
     if(!btn_state){

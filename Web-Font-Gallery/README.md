@@ -2,7 +2,7 @@
 - [작업 페이지](https://sseom.github.io/project/Web-Font-Gallery/)
 - [작업 소스](https://github.com/sseom/project/tree/master/Web-Font-Gallery)
 - 작업자 : 윤선미(SSEOM)
-- 작업 일자 : 2017.03.10 ~ 03.11
+- 작업 일자 : 2017.03.10 ~ 03.12
 - E-mail : ysum1011@naver.com
 - Portfolio Blog : http://sseom.github.io/
 
@@ -132,3 +132,67 @@
                 || document.documentElement.clientHeight
                 || document.body.clientHeight;
             ```
+
+
+###업로드 후 수정사항
+1. HTTPS
+    - [오류] 깃허브에 업로드한 후 페이지 확인을 했는데 구글 웹폰트를 로드하지 못했음.
+        ```
+        // 오류메세지
+        The page at 'https://sseom.github.io/project/Web-Font-Gallery/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Dosis|Griffy|Lemonada|Oswald|Pacifico|Ranga'. This request has been blocked; the content must be served over HTTPS.
+
+        =>  HTTPS를 통해 콘텐츠가 제공되어야합니다.
+        ```
+    - [왜?] http의 주소를 가지고 임폴트 URL주소의 https로
+    - [해결방법]
+        + `@import url("http://fonts.~~~);`  => https로 수정
+
+2. 모달콘텐츠 폰트 컬러 디폰트값
+    - [문제발견] 모달콘텐츠 클로즈후 다시 오픈했을때 폰트 컬러가 이전에 조절했던 컬러값으로 나옴
+    - [왜?] 테스트시 놓친 부분... 
+    - [해결] 기본 폰트색상을 가져와서 변수에 저장. 그리고 모달창이 닫힐때 폰트색상을 기본값으로  변경되도록 코드수정!!
+
+3. 제이쿼리를 객체를 담은 변수구분
+    - [문제발견] 제이쿼리가 객체를 할당된 변수의 이름이 잘못됨.
+    - [해결] 제이쿼리가 객체가 담긴 변수명 앞엔 $(달러기호)를 붙여서 작성하도록 한다.
+    - [왜?] 변수명을 봤을때 JS객체를 할당한 변수인지 제이쿼리 객체를 할당한 변수인지 한눈에 파악하기 위해서...
+
+4. 폰트 뷰 부분 : 단어 분리
+    - [해결하지 않고 넘어갔던 부분]
+        - 폰트 뷰 부분에서 마크업할때 ABCDEFGHIJKLM.... 이런식으로 했을때 단어분리가 안되서 박스안에서 자연스럽게 줄바꿈을 하지 못하고 글자가 뵤소의 너비 밖으로 나가버림 
+        - 마크업에서 일일이 각 문자와 문자 사이를 공백을 줬음..... 바보였지..
+    - [해결 방법] 
+        + `word-break: break-all;` 
+            + 각 각의 문자 사이의 줄바꿈이 일어날수 있도록 설정 해주면됨.
+            + [지원 상태 : CAN I USE](http://caniuse.com/#search=word-break)
+            - [참고 w3schools](https://www.w3schools.com/cssref/css3_pr_word-break.asp)
+        + `word-wrap: break-word;`, `overflow-wrap: break-word;`
+            + 단어를 다 분리해서 다음줄로 넘어가게끔 만든다.
+            + word-wrap는(MS에서 제공되었던) 현재는 overflow-wrap으로 변경되어 사용.
+            + 하지만 브라우져들의 지원상태가 부분적으로 지원됨. 
+            + [지원 상태 : CAN I USE](http://caniuse.com/#search=word-wrap)
+            - [참고 w3schools](https://www.w3schools.com/cssref/css3_pr_word-wrap.asp)
+            - [참고 MDN](https://developer.mozilla.org/ko/docs/Web/CSS/overflow-wrap)
+        + 즉, 이 부분에 있어서는 `word-break: break-all;` 을 사용하는 것이 좋겠다.
+
+5. 모달 컨텐츠 PICK버튼
+    - [문제발견] 컬러를 조정한후 컬러칩을 닫지 않고 모달콘텐츠 클로즈 버튼으로 창을 닫았을때 다음 모달콘텐츠에서 PICK버튼이 CLOSE로 되어있음.
+    - [왜?] 테스트시 놓친 부분... 
+    - [해결] 모달콘텐츠 클로즈 이벤트에서 컬러 칩 버튼 value값을 "PICK"으로 변경되도록 코드 수정!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

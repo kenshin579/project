@@ -4,6 +4,7 @@
   // ---------------[ MODAL CONTENT ]------------------
 
   var font_article     = document.querySelectorAll('.font-article'),
+      first_view_wrap  = font_article[0].querySelector('.view-wrap'),
       detail_view_btn  = document.querySelectorAll('.detail-view-btn'),
       btn_length       = detail_view_btn.length,
       modal_wrap       = document.querySelector('.modal-wrap'),
@@ -64,6 +65,10 @@
     // 아이콘의 위치에 따라 폰트도 기본으로 변경
     var size_value = moveSize(icon_location);
     $(modal_view_wrap).css('fontSize', size_value);
+
+    // 폰트 컬러 기본값으로 변경
+    var origin_color = $(first_view_wrap).css('color');
+    modal_view_wrap.style.color = origin_color;
   };
 
 // ---------------[ FONT SIZE ]------------------

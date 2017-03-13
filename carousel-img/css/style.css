@@ -156,7 +156,7 @@ body::before{
 
 /* carousel-view */
 .carousel-view{
-  transition: all 0.4s ease-out;
+  /*transition: all 0.4s ease-out;*/
 }
 .carousel-view img{
   float: left;
@@ -164,7 +164,7 @@ body::before{
 
 .img-title{
   position: absolute;
-  bottom: 40px;
+  top: 620px;
   padding: 10px 15px;
   background: #fff;
   color: #363737;

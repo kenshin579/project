@@ -17,6 +17,8 @@ function init() {
   // 변수선언 및 요소 선택 
   var selected_num    = 0;
   var selected_tab    = null;
+  var target_btn    = true; //true 일땐 다음 버튼
+
   var container       = document.querySelector('.carousel-container');
   var container_width = container.clientWidth;
   var view            = container.querySelector('.carousel-view');
@@ -25,6 +27,8 @@ function init() {
   var tabs_total      = tabs.length;
   var prev_button     = document.querySelector('.previous-btn');
   var next_button     = document.querySelector('.next-btn');
+
+
 
   // 이미지 타이틀 동적으로 요소 생성
   var body = document.body;
@@ -58,6 +62,8 @@ function init() {
     // 각 이미지의 너비는 600px 된다.
   }
 
+
+
   //인디케이터 반복 순환 
   for (var i=0, l=tabs_total; i<l; i++) {
     var tab = tabs[i];
@@ -73,29 +79,45 @@ function init() {
   //버튼
 
   prev_button.onclick = prevViewContent;
-  next_button.onclick = nextViewContent;
+  // next_button.onclick = nextViewContent;
 
   function prevViewContent() {
-    selected_num = --selected_num % tabs_total;
-    // 0 % 4 = 0
+    selected_num = --selected_num % tabs_total ;
+    // ==> -1,-2,-3,-0,-1,-2,-3,-0,-1,,,,,, 반환됨
+    // 아래 조건구문으로 인해 나눠질 숫자값을 변경해 아래와 같은 계산식으로 반환
     // 3 % 4 = 3
     // 2 % 4 = 2
     // 1 % 4 = 1
     // 0 % 4 = 0
     // 3 % 4 = 3
     // ,,,,,,,,,,,
-    // 나머지값 0,3,2,1 반복  
-    // 나눠질 숫자는 아래 if문으로 인해 0,3,2,1,0,3 ,,, 순으로
+    // 나머지값 0->3->2->1->0->3...... 반복됨  
 
-  // 조건구문이 필요한 이유 :  if문으로 인해 0,3,2,1,0,3 ,,, 순으로 돌아가게 하려고
-    //만약 상태변수 값이 0보다 작으면 구문 실행  
+    //==========> selected_num--; 이렇게 카운트 해도 같은 값나옴. 
+
+    // 만약 상태변수 값이 0보다 작으면 구문 실행  
     if ( selected_num < 0 ) {
       // 이미지 갯수 -1 한 값을 상태변수에 할당
       // 4-1 = 3 
       selected_num = tabs_total - 1;
     }
-    // console.log(active_index); // 0->3->2->1->0->3......
+    // console.log(selected_num); 
+
     activeViewContent( tabs[selected_num], selected_num );
+
+    // 마지막 이미지 복사
+    var cloneImg = view.children[tabs_total-1].cloneNode(true);
+    // 맨 마지막 이미지 삭제
+    view.removeChild(view.children[tabs_total-1]);
+    // 첫번째에 붙여넣고
+    view.insertBefore(cloneImg, view.children[0]);
+
+    // 이미지 랩 트렌지션 없이 이동
+    view.style.transform = 'translate( '+ -1 * ( container_width * 1 ) +'px, 0px)';
+    view.style.transition = 'transform 0.0s ease-in-out';
+
+    target_btn = false;
+    setTimeout(infinitImg,100);
   }
 
   function nextViewContent() {
@@ -109,8 +131,17 @@ function init() {
     // ,,,,,,,,,
     // 나머지값 0,1,2,3 반복
     // console.log(active_index); // 0->1->2->3->0->1......
+    // =============> selected_num++; 이렇게 카운트 해도 같은 값나옴. 단, 조건을 넣어야함.!!!
+    // =============> if(selected_num > tabs_total-1){ selected_num = 0; }
 
     activeViewContent( tabs[selected_num], selected_num );
+
+    view.style.transform = 'translate( '+ -1 * ( container_width * 1 ) +'px, 0px)';
+    view.style.transition = 'transform 0.4s ease-in-out';
+    target_btn = true;
+    setTimeout(infinitImg,500);
+
+
   }
 
   //--------------------------------------------------
@@ -128,8 +159,8 @@ function init() {
     // 방금 선택한걸 상태변수에 넣어줘
     selected_tab = tab; //런타임 중에 값은 바뀔수있다 
 
-    view.style.transform = 'translateX('+ ( -1 * num * container_width )+'px)';
 
+    // 이미지 타이틀 
     var title = document.querySelector('.img-title');
     var img_alt = view_contents[num].getAttribute('alt');
     title.innerHTML = img_alt;
@@ -137,5 +168,27 @@ function init() {
 
   // 사용자 액션
   tabs[0].onclick();
+
+
+  // infinit 함수 만들기
+  function infinitImg(){
+    if(target_btn){
+      // 첫번째 이미지 복사
+      var cloneImg = view.children[0].cloneNode(true);
+      // 마지막에 붙여넣고
+      view.appendChild(cloneImg);
+      // 맨 처음 이미지는 삭제
+      view.removeChild(view.children[0]);
+
+      // 이미지 랩 제자리로 배치 : 트렌지션 없이 이동
+      view.style.transform = 'translate( '+ -1 * ( container_width * 0 ) +'px, 0px)';
+      view.style.transition = 'transform 0.0s ease-in-out';
+    }else{
+      // 이미지 랩 제자리로 배치
+      view.style.transform = 'translate( '+ -1 * ( container_width * 0 ) +'px, 0px)';
+      view.style.transition = 'transform 0.4s ease-in-out';
+    }
+    
+  }
 
 }

@@ -15,10 +15,12 @@
       <h2>Basic <span class="sub-head">정적인 이미지 슬라이드</span></h2>
       <div class="basic-carousel">
         <ul class="imgs-containner" >
-          <li class="img-list img1">1번</li>
-          <li class="img-list img2">2번</li>
-          <li class="img-list img3">3번</li>
-          <li class="img-list img4">4번</li>
+          <li><img src="images/img-01.jpg" alt="img-01"></li>
+          <li><img src="images/img-02.jpg" alt="img-02"></li>
+          <li><img src="images/img-03.jpg" alt="img-03"></li>
+          <li><img src="images/img-04.jpg" alt="img-04"></li>
+          <li><img src="images/img-05.jpg" alt="img-05"></li>
+          <li><img src="images/img-06.jpg" alt="img-06"></li>
         </ul>
       </div>
       <!-- 버튼 -->
@@ -32,15 +34,19 @@
       (function(global){
         'use strict';
         var carousel_view = document.querySelector('.basic-carousel');
+        var img_width = carousel_view.clientWidth;
         var imgs_wrap = carousel_view.querySelector('.imgs-containner');
-        var img_list = imgs_wrap.querySelectorAll('.img-list');
-        var img_width = imgs_wrap.querySelectorAll('.img-list')[0].clientWidth;
+        var img_list = imgs_wrap.querySelectorAll('li');
         var img_num = img_list.length;
         var prev_btn = document.querySelector('.prev-btn0');
         var next_btn = document.querySelector('.next-btn0');
         var index = 0;
 
-        imgs_wrap.style.width = (carousel_view.clientWidth * img_num) +'px';
+        imgs_wrap.style.width = (img_width * img_num) +'px';
+
+        for(var i =0 ; i < img_num; i++){
+          img_list[i].style.width = img_width + 'px';
+        }
 
         next_btn.onclick = function(){
           index++;
@@ -64,10 +70,12 @@
       <h2>Sliding <span class="sub-head">부드럽게 이미지 슬라이딩</span></h2>
       <div class="sliding-carousel">
         <ul class="imgs-containner" >
-          <li class="img-list img1">1번</li>
-          <li class="img-list img2">2번</li>
-          <li class="img-list img3">3번</li>
-          <li class="img-list img4">4번</li>
+          <li><img src="images/img-01.jpg" alt="img-01"></li>
+          <li><img src="images/img-02.jpg" alt="img-02"></li>
+          <li><img src="images/img-03.jpg" alt="img-03"></li>
+          <li><img src="images/img-04.jpg" alt="img-04"></li>
+          <li><img src="images/img-05.jpg" alt="img-05"></li>
+          <li><img src="images/img-06.jpg" alt="img-06"></li>
         </ul>
       </div>
       <!-- 버튼 -->
@@ -82,15 +90,20 @@
         'use strict';
 
         var carousel_view = document.querySelector('.sliding-carousel');
+        var img_width = carousel_view.clientWidth;
         var imgs_wrap = carousel_view.querySelector('.imgs-containner');
-        var img_list = imgs_wrap.querySelectorAll('.img-list');
-        var img_width = imgs_wrap.querySelectorAll('.img-list')[0].clientWidth;
+        var img_list = imgs_wrap.querySelectorAll('li');
         var img_num = img_list.length;
         var prev_btn = document.querySelector('.prev-btn1');
         var next_btn = document.querySelector('.next-btn1');
         var index = 0;
 
-        imgs_wrap.style.width = (carousel_view.clientWidth * img_num) +'px';
+        imgs_wrap.style.width = (img_width * img_num) +'px';
+
+        for(var i =0 ; i < img_num; i++){
+          img_list[i].style.width = img_width + 'px';
+        }
+
 
         next_btn.onclick = function(){
           index++;
@@ -112,10 +125,12 @@
       <h2>Infinit Sliding - v.1 <span class="sub-head">이미지 위치값 조정 : 이미지 무한 슬라이딩</span></h2>
       <div class="infinit-carousel">
         <ul class="imgs-containner" >
-          <li class="img-list img1">1번</li>
-          <li class="img-list img2">2번</li>
-          <li class="img-list img3">3번</li>
-          <li class="img-list img4">4번</li>
+          <li><img src="images/img-01.jpg" alt="img-01"></li>
+          <li><img src="images/img-02.jpg" alt="img-02"></li>
+          <li><img src="images/img-03.jpg" alt="img-03"></li>
+          <li><img src="images/img-04.jpg" alt="img-04"></li>
+          <li><img src="images/img-05.jpg" alt="img-05"></li>
+          <li><img src="images/img-06.jpg" alt="img-06"></li>
         </ul>
       </div>
       <!-- 버튼 -->
@@ -131,13 +146,15 @@
         'use strict';
 
         var carousel_view = document.querySelector('.infinit-carousel');
+        var img_width = carousel_view.clientWidth;
         var imgs_wrap = carousel_view.querySelector('.imgs-containner');
-        var img_list = imgs_wrap.querySelectorAll('.img-list');
-        var img_width = imgs_wrap.querySelectorAll('.img-list')[0].clientWidth;
-        var img_num = imgs_wrap.querySelectorAll('.img-list').length;
+        var img_list = imgs_wrap.querySelectorAll('li');
+        var img_num = img_list.length;
         var prev_btn = document.querySelector('.prev-btn2');
         var next_btn = document.querySelector('.next-btn2');
         var index = 0;
+
+        imgs_wrap.style.width = (img_width * img_num) +'px';
 
         //초기값
         showImage(index);
@@ -160,6 +177,7 @@
           // 보여질 이미지를 제외한 나머지 이미지들 안보이게 하려고 모든 이미지 none
           // 왜? 우선순위상 뒤에 있는 이미지들이 위로 올라오니까(보여지는 부분에 있어서)
           for(var i = 0; i < img_num ;i++){
+            img_list[i].style.width = img_width + 'px';
             img_list[i].style.display = 'none';
           }
 
@@ -188,10 +206,12 @@
       <h2>Infinit Sliding - v.2<span class="sub-head">이미지 붙여 넣는 방식 : 이미지 무한 슬라이딩</span></h2>
       <div class="infinit-carousel-2">
         <ul class="imgs-containner" >
-          <li class="img-list img1">1번</li>
-          <li class="img-list img2">2번</li>
-          <li class="img-list img3">3번</li>
-          <li class="img-list img4">4번</li>
+          <li><img src="images/img-01.jpg" alt="img-01"></li>
+          <li><img src="images/img-02.jpg" alt="img-02"></li>
+          <li><img src="images/img-03.jpg" alt="img-03"></li>
+          <li><img src="images/img-04.jpg" alt="img-04"></li>
+          <li><img src="images/img-05.jpg" alt="img-05"></li>
+          <li><img src="images/img-06.jpg" alt="img-06"></li>
         </ul>
       </div>
       <!-- 버튼 -->
@@ -206,22 +226,26 @@
         'use strict';
 
         var carousel_view = document.querySelector('.infinit-carousel-2');
+        var img_width = carousel_view.clientWidth;
         var imgs_wrap = carousel_view.querySelector('.imgs-containner');
-        var img_list = imgs_wrap.querySelectorAll('.img-list');
-        var img_width = imgs_wrap.querySelectorAll('.img-list')[0].clientWidth;
+        var img_list = imgs_wrap.querySelectorAll('li');
         var img_num = img_list.length;
         var prev_btn = document.querySelector('.prev-btn3');
         var next_btn = document.querySelector('.next-btn3');
         var index = 0;
         var target = true;
 
-        imgs_wrap.style.width = (carousel_view.clientWidth * img_num) +'px';
+        imgs_wrap.style.width = (img_width * img_num) +'px';
+
+        for(var i =0 ; i < img_num; i++){
+          img_list[i].style.width = img_width + 'px';
+        }
+
 
         next_btn.onclick = nextMove;
         prev_btn.onclick = prevMove;
 
         function prevMove(){
-
           // 마지막 이미지 복사
           var cloneImg = imgs_wrap.children[img_num-1].cloneNode(true);
           // 맨 마지막 이미지 삭제

@@ -1,4 +1,4 @@
-#Web Font Gallery 작업일지
+# Web Font Gallery 작업일지
 - [작업 페이지](https://sseom.github.io/project/Web-Font-Gallery/)
 - [작업 소스](https://github.com/sseom/project/tree/master/Web-Font-Gallery)
 - 작업자 : 윤선미(SSEOM)
@@ -33,7 +33,7 @@
 - Editor : sublimeText3
 - Test Browser : Chrom 최신버전 ( 버전 57.0.2987.98 (64-bit) )
 
-###작업 폴더 구조
+### 작업 폴더 구조
 - Web-Font-Gallery : 작업 소스
     - index.html
     - css
@@ -55,7 +55,7 @@
     + gulp.config.js
     + .csscomb.json
 
-###기능 구현 리스트
+### 기능 구현 리스트
 - Static Web : 콘텐츠의 너비는 브라우져창의 80%이며 910px이하로는 줄어들지 않음.
 - 웹폰트 리스트에서 클릭 버튼 누르면 해당 웹폰트의 사이즈와 컬러를 미리보기 할수 있는 모달창 오픈.
 - 모달 콘텐츠
@@ -70,7 +70,7 @@
         + 컬러칩 클로즈.
         + 핸들아이콘, 폰트 뷰에서의 폰트의 크기, 컬러 디폴트값으로 돌아감.
 
-###Sass사용
+### Sass사용
 - _color-table.sass
     - _open-color.scss 임폴트해서 해당 컬러와 반복문 사용해서 컬러칩이 들어갈 클래스 이름과 색상을 순서대로 뽑아냄
 - _common.sass
@@ -88,7 +88,7 @@
     + mixin : 위드와 하이트를 동시에 작성.
         - [참고 sass-guidelin](https://sass-guidelin.es/#mixins)
 
-###IE8 호완 문제
+### IE8 호완 문제
 1. CSS3 
     - border-radius : 지원하지 않음 
         - 해결 방법 : 정보 인식에 무리는 없기 때문에 무거운 javascript 라이브러리 사용해 성능을 저하 하는것 보단 정보가 깨지지 않는 것에 중점을 둠
@@ -134,7 +134,7 @@
             ```
 
 
-###업로드 후 수정사항
+### 업로드 후 수정사항
 1. HTTPS
     - [오류] 깃허브에 업로드한 후 페이지 확인을 했는데 구글 웹폰트를 로드하지 못했음.
         ```
@@ -180,6 +180,27 @@
     - [왜?] 테스트시 놓친 부분... 
     - [해결] 모달콘텐츠 클로즈 이벤트에서 컬러 칩 버튼 value값을 "PICK"으로 변경되도록 코드 수정!!
 
+6. 폰트뷰 클릭 버튼 JS수정
+    - [수정] JS코드 28번째줄 `detail_view_btn[i]` => `view_btns` 변경해서 이벤트 걸기
+    - [왜?] 상태변수를 만들어서 버튼들의 인덱스를 순서대로 담았기 때문에 또 다시 인덱스 찾아서 이벤트를 걸 필요가 없다.
+    ```
+    // 폰트 뷰 버튼들 순환해서 이벤트 걸기
+    for(var i=0;i<btn_length;i++){
+        // 상태변수 : 각 인덱스값 저장
+        var view_btns = detail_view_btn[i];
+        view_btns.num = i;
+
+        // 폰트 뷰 버튼들 인덱스 순으로 클릭이벤트
+        // 수정전 ===>
+        detail_view_btn[i].onclick = function(e){ ~~~~ };
+
+        // 수정후  ===>
+        view_btns.onclick = function(e){ ~~~~ };
+    }
+    ```
+
+7. 모달 컨텐츠 PICK버튼 오픈시 스크롤 생성 때문에 축이 움직이는 현상 방지
+    - [해결] `overflow-y: scroll;` 사용해서 Y축 스크롤을 미리 생성해서 축이동을 방지.
 
 
 

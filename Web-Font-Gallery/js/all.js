@@ -25,7 +25,7 @@
     view_btns.num = i;
 
     // 폰트 뷰 버튼들 인덱스 순으로 클릭이벤트
-    detail_view_btn[i].onclick = function(e){
+    view_btns.onclick = function(e){
       // 이벤트를 실행한 대상요소의 인덱스값 저장
       var index = this.num;
 

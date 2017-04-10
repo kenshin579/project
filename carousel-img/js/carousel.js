@@ -79,7 +79,7 @@ function init() {
   //버튼
 
   prev_button.onclick = prevViewContent;
-  // next_button.onclick = nextViewContent;
+  next_button.onclick = nextViewContent;
 
   function prevViewContent() {
     selected_num = --selected_num % tabs_total ;
